@@ -1,363 +1,227 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rahul Academy - Learn. Grow. Succeed.</title>
-
+<meta name="theme-color" content="#123b70">
+<title>Rahul Academy | Learn. Grow. Succeed.</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background: #f4f7fb;
-  color: #222;
-  line-height: 1.6;
-}
-
-header {
-  background: linear-gradient(135deg, #123c8c, #1769aa);
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-.logo {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.tagline {
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-nav {
-  background: white;
-  padding: 12px;
-  text-align: center;
-  box-shadow: 0 2px 8px #ccc;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav a {
-  color: #123c8c;
-  text-decoration: none;
-  margin: 0 8px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.hero {
-  background: linear-gradient(135deg, #1769aa, #42a5f5);
-  color: white;
-  text-align: center;
-  padding: 55px 20px;
-}
-
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 17px;
-  margin-bottom: 20px;
-}
-
-.button {
-  display: inline-block;
-  background: white;
-  color: #1769aa;
-  padding: 12px 22px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section {
-  padding: 35px 18px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  color: #123c8c;
-  margin-bottom: 25px;
-  font-size: 28px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: white;
-  padding: 22px;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px #ddd;
-  text-align: center;
-}
-
-.card h3 {
-  color: #1769aa;
-  margin-bottom: 8px;
-}
-
-.icon {
-  font-size: 38px;
-  margin-bottom: 8px;
-}
-
-.class9 {
-  background: #eaf4ff;
-  border-radius: 18px;
-}
-
-.subject {
-  border-left: 5px solid #1769aa;
-  text-align: left;
-}
-
-.subject h3 {
-  font-size: 20px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-.notice {
-  background: #fff4d6;
-  border-left: 5px solid #f0a500;
-  padding: 18px;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  box-shadow: 0 3px 10px #ddd;
-}
-
-th, td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
-th {
-  background: #1769aa;
-  color: white;
-}
-
-footer {
-  background: #123c8c;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-  margin-top: 30px;
-}
-
-footer p {
-  margin: 5px;
-}
-
-@media(max-width:600px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  table {
-    font-size: 13px;
-  }
-}
+:root{--blue:#123b70;--light:#edf4ff;--gold:#ffca55;--ink:#18243a;--muted:#66758a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#f6f8fc;color:var(--ink);line-height:1.6}
+header{background:var(--blue);color:white;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:bold}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:8px 10px;border-radius:7px}
+nav a:hover{background:#ffffff22}
+.hero{padding:55px 6%;background:linear-gradient(135deg,#123b70,#2869ae);color:white}
+.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.15;margin:10px 0}
+.hero p{max-width:620px;color:#e2ecff}
+.btn{border:0;border-radius:8px;padding:12px 17px;background:var(--gold);color:#18243a;font-weight:bold;cursor:pointer;display:inline-block;text-decoration:none}
+.btn:hover{filter:brightness(.95)}
+.btn.secondary{background:var(--blue);color:white}
+.wrap{max-width:1100px;margin:auto;padding:28px 16px}
+.section-title{margin:0 0 7px;font-size:26px}
+.muted{color:var(--muted)}
+.stats,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px}
+.stat,.card{background:white;padding:20px;border-radius:14px;border:1px solid #e4eaf3;box-shadow:0 4px 15px #152d4b08}
+.stat strong{font-size:25px;color:var(--blue)}
+.card h3{margin:8px 0}
+.emoji{font-size:30px}
+.searchbar{display:flex;gap:8px;margin:16px 0}
+input,select{min-width:0;width:100%;padding:12px;border:1px solid #ccd6e5;border-radius:8px;font-size:16px;background:white}
+.searchbar input{flex:1}
+.subjects{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.subject-btn{border:1px solid #cbd8eb;background:white;padding:9px 12px;border-radius:20px;cursor:pointer}
+.subject-btn.active,.subject-btn:hover{background:var(--blue);color:white}
+.result{margin-top:16px;padding:18px;background:var(--light);border-radius:12px;white-space:pre-line}
+details{background:white;border:1px solid #e1e8f1;border-radius:10px;margin:10px 0;padding:14px}
+summary{font-weight:bold;cursor:pointer}
+.quiz-question{margin:16px 0;padding:15px;background:#f2f6fd;border-radius:10px}
+.quiz-question label{display:block;padding:5px;cursor:pointer}
+.notice{padding:12px;background:#fff5d9;border-radius:9px;font-size:14px}
+footer{text-align:center;background:#102e55;color:white;padding:24px;margin-top:25px}
+.hidden{display:none}
+@media(max-width:480px){header{padding:14px}nav{gap:2px}nav a{padding:7px;font-size:14px}.hero{padding:40px 20px}.searchbar{flex-wrap:wrap}}
 </style>
 </head>
-
 <body>
-
 <header>
-  <div class="logo">🎓 Rahul Academy</div>
-  <div class="tagline">Learn • Grow • Succeed</div>
+  <div class="logo">📘 Rahul <span>Academy</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#classes">Classes</a>
+    <a href="#study">Study</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#classes">Classes</a>
-  <a href="#subjects">Subjects</a>
-  <a href="#timetable">Timetable</a>
-  <a href="#contact">Contact</a>
-</nav>
-
+<main>
 <section class="hero" id="home">
-  <h1>Welcome to Rahul Academy</h1>
-  <p>Your online learning space for better preparation and success.</p>
-  <a href="#classes" class="button">Explore Classes</a>
+  <p>WELCOME TO YOUR LEARNING HOME</p>
+  <h1>Learn. Grow. Succeed.</h1>
+  <p>Understand concepts, revise important topics, practise questions and build confidence every day.</p>
+  <a class="btn" href="#classes">Start Learning →</a>
+  <a class="btn" href="#quiz" style="margin-left:7px">Try a Quiz</a>
 </section>
 
-<section id="classes">
-  <h2 class="section-title">Our Classes</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">📘</div>
-      <h3>Class 9</h3>
-      <p>Complete study support for Class 9 students.</p>
-      <a href="#class9">View Class 9</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">📚</div>
-      <h3>Study Materials</h3>
-      <p>Notes, revision resources and important questions.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📝</div>
-      <h3>Practice</h3>
-      <p>Practice questions to improve your preparation.</p>
-    </div>
-
+<section class="wrap">
+  <h2 class="section-title">Your learning dashboard</h2>
+  <p class="muted">Everything you need to begin your studies.</p>
+  <div class="stats">
+    <div class="stat">📚<br><strong>Classes 6–10</strong><br><span class="muted">Explore learning topics</span></div>
+    <div class="stat">✍️<br><strong>Practice</strong><br><span class="muted">Test what you know</span></div>
+    <div class="stat">🎯<br><strong>Revise</strong><br><span class="muted">Build strong foundations</span></div>
   </div>
 </section>
 
-<section id="class9" class="class9">
-  <h2 class="section-title">Class 9 • 2026</h2>
-
-  <p style="text-align:center;">
-    Study resources and subject-wise preparation for Class 9.
-  </p>
-
-  <div class="notice">
-    <strong>📢 Important:</strong>
-    Check your school/board's official 2026 syllabus for the
-    exact chapters and examination pattern.
+<section class="wrap" id="classes">
+  <h2 class="section-title">Choose your class</h2>
+  <p class="muted">Select a class to explore its subjects.</p>
+  <div class="grid">
+    <div class="card"><div class="emoji">📗</div><h3>Class 6</h3><p>Build your basics.</p><button class="btn secondary" onclick="chooseClass(6)">Explore Class 6</button></div>
+    <div class="card"><div class="emoji">📘</div><h3>Class 7</h3><p>Strengthen your concepts.</p><button class="btn secondary" onclick="chooseClass(7)">Explore Class 7</button></div>
+    <div class="card"><div class="emoji">📙</div><h3>Class 8</h3><p>Prepare for higher classes.</p><button class="btn secondary" onclick="chooseClass(8)">Explore Class 8</button></div>
+    <div class="card"><div class="emoji">🎓</div><h3>Class 9</h3><p>Study and revise key topics.</p><button class="btn secondary" onclick="chooseClass(9)">Explore Class 9</button></div>
+    <div class="card"><div class="emoji">🏆</div><h3>Class 10</h3><p>Practise for your exams.</p><button class="btn secondary" onclick="chooseClass(10)">Explore Class 10</button></div>
   </div>
+  <div id="classResult" class="result hidden" aria-live="polite"></div>
 </section>
 
-<section id="subjects">
-  <h2 class="section-title">Class 9 Subjects</h2>
-
-  <div class="cards">
-
-    <div class="card subject">
-      <h3>🔢 Mathematics</h3>
-      <ul>
-        <li>Chapter Notes</li>
-        <li>Important Questions</li>
-        <li>Practice Problems</li>
-      </ul>
-    </div>
-
-    <div class="card subject">
-      <h3>🔬 Science</h3>
-      <ul>
-        <li>Physics</li>
-        <li>Chemistry</li>
-        <li>Biology</li>
-      </ul>
-    </div>
-
-    <div class="card subject">
-      <h3>🌍 Social Science</h3>
-      <ul>
-        <li>History</li>
-        <li>Geography</li>
-        <li>Civics</li>
-        <li>Economics</li>
-      </ul>
-    </div>
-
-    <div class="card subject">
-      <h3>📖 English</h3>
-      <ul>
-        <li>Literature</li>
-        <li>Grammar</li>
-        <li>Writing Skills</li>
-      </ul>
-    </div>
-
-    <div class="card subject">
-      <h3>🇮🇳 Hindi</h3>
-      <ul>
-        <li>Literature</li>
-        <li>Grammar</li>
-        <li>Writing</li>
-      </ul>
-    </div>
-
+<section class="wrap" id="study">
+  <h2 class="section-title">Study corner</h2>
+  <p class="muted">Choose a subject and search the topics available on this demo website.</p>
+  <div class="searchbar">
+    <input id="search" type="search" placeholder="Search topics, e.g. fractions" aria-label="Search study topics">
+    <button class="btn secondary" onclick="searchTopics()">Search</button>
   </div>
+  <div class="subjects" id="subjectButtons">
+    <button class="subject-btn active" onclick="chooseSubject('All',this)">All</button>
+    <button class="subject-btn" onclick="chooseSubject('Mathematics',this)">Mathematics</button>
+    <button class="subject-btn" onclick="chooseSubject('Science',this)">Science</button>
+    <button class="subject-btn" onclick="chooseSubject('English',this)">English</button>
+    <button class="subject-btn" onclick="chooseSubject('Social Science',this)">Social Science</button>
+  </div>
+  <div id="topicList" class="grid"></div>
+  <p class="notice">Learning content on this starter website is sample content. Check your official school or board syllabus for the complete 2026–27 curriculum.</p>
 </section>
 
-<section>
-  <h2 class="section-title">Why Choose Rahul Academy?</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🎯</div>
-      <h3>Easy Learning</h3>
-      <p>Simple explanations designed for students.</p>
+<section class="wrap" id="quiz">
+  <h2 class="section-title">Quick knowledge quiz</h2>
+  <p class="muted">Answer these three questions and check your score.</p>
+  <form id="quizForm">
+    <div class="quiz-question">
+      <strong>1. What is 7 × 8?</strong>
+      <label><input type="radio" name="q1" value="a" required> 54</label>
+      <label><input type="radio" name="q1" value="b"> 56</label>
+      <label><input type="radio" name="q1" value="c"> 64</label>
     </div>
-
-    <div class="card">
-      <div class="icon">💡</div>
-      <h3>Smart Revision</h3>
-      <p>Focus on important concepts and practice.</p>
+    <div class="quiz-question">
+      <strong>2. Which gas do plants absorb during photosynthesis?</strong>
+      <label><input type="radio" name="q2" value="a" required> Oxygen</label>
+      <label><input type="radio" name="q2" value="b"> Nitrogen</label>
+      <label><input type="radio" name="q2" value="c"> Carbon dioxide</label>
     </div>
-
-    <div class="card">
-      <div class="icon">🏆</div>
-      <h3>Better Preparation</h3>
-      <p>Build confidence through regular study.</p>
+    <div class="quiz-question">
+      <strong>3. What is the plural of “child”?</strong>
+      <label><input type="radio" name="q3" value="a" required> Children</label>
+      <label><input type="radio" name="q3" value="b"> Childs</label>
+      <label><input type="radio" name="q3" value="c"> Childes</label>
     </div>
-
-  </div>
+    <button class="btn" type="submit">Check My Score</button>
+  </form>
+  <div id="quizResult" class="result hidden" aria-live="polite"></div>
 </section>
 
-<section id="timetable">
-  <h2 class="section-title">Sample Study Timetable</h2>
+<section class="wrap" id="about">
+  <h2 class="section-title">About Rahul Academy</h2>
+  <div class="card">
+    <p>Rahul Academy is a student learning project designed to make studying more organized and accessible on mobile phones.</p>
+    <p>Use the subject finder, explore classes and practise with the quiz. More lessons can be added as you develop the website.</p>
+  </div>
+</section>
+</main>
 
-  <table>
-    <tr>
-      <th>Day</th>
-      <th>Subject</th>
-      <th>Study Time</th>
-    </tr>
+<footer>
+  <strong>Rahul Academy</strong>
+  <p>Learn. Grow. Succeed.</p>
+  <small>Educational project · © <span id="year"></span> Rahul Academy</small>
+</footer>
 
-    <tr>
-      <td>Monday</td>
-      <td>Mathematics</td>
-      <td>5:00 PM</td>
-    </tr>
+<script>
+const topics = [
+ {subject:"Mathematics",title:"Fractions",desc:"Fractions represent parts of a whole. For example, 1/2 means one of two equal parts.",classes:[6,7,8]},
+ {subject:"Mathematics",title:"Algebra",desc:"Use letters such as x to represent unknown numbers. Example: x + 3 = 7 gives x = 4.",classes:[7,8,9,10]},
+ {subject:"Mathematics",title:"Linear Equations",desc:"An equation states that two expressions are equal. Solve by keeping both sides balanced.",classes:[8,9,10]},
+ {subject:"Mathematics",title:"Geometry",desc:"Study points, lines, angles, triangles and other shapes.",classes:[6,7,8,9,10]},
+ {subject:"Science",title:"Matter",desc:"Matter has mass and occupies space. Common states include solids, liquids and gases.",classes:[6,9]},
+ {subject:"Science",title:"Cells",desc:"The cell is the basic structural and functional unit of living organisms.",classes:[8,9,10]},
+ {subject:"Science",title:"Force and Motion",desc:"A force can change an object's motion or shape. Motion describes a change in position over time.",classes:[8,9,10]},
+ {subject:"Science",title:"Ecosystems",desc:"Ecosystems include living organisms interacting with each other and their environment.",classes:[6,7,8,9,10]},
+ {subject:"English",title:"Grammar",desc:"Learn parts of speech, sentence structure, tenses and punctuation.",classes:[6,7,8,9,10]},
+ {subject:"English",title:"Reading Comprehension",desc:"Read carefully, identify the main idea and use evidence from the passage to answer questions.",classes:[6,7,8,9,10]},
+ {subject:"Social Science",title:"History",desc:"Study past events, people and societies using historical evidence.",classes:[6,7,8,9,10]},
+ {subject:"Social Science",title:"Geography",desc:"Explore Earth's landforms, climate, resources and human environments.",classes:[6,7,8,9,10]},
+ {subject:"Social Science",title:"Civics",desc:"Learn about government, citizens, rights, responsibilities and democracy.",classes:[6,7,8,9,10]}
+];
+let selectedSubject = "All";
+let selectedClass = 0;
 
-    <tr>
-      <td>Tuesday</td>
-      <td>Science</td>
-      <td>5:00 PM</td>
-
-
-          
+function renderTopics(){
+ const query = document.getElementById("search").value.trim().toLowerCase();
+ const filtered = topics.filter(t =>
+  (selectedSubject==="All" || t.subject===selectedSubject) &&
+  (!selectedClass || t.classes.includes(selectedClass)) &&
+  (!query || (t.title+" "+t.desc+" "+t.subject).toLowerCase().includes(query))
+ );
+ const list = document.getElementById("topicList");
+ if(!filtered.length){
+  list.innerHTML='<div class="card"><h3>No matching topics found</h3><p>Try another keyword or select a different class or subject.</p></div>';
+  return;
+ }
+ list.innerHTML=filtered.map(t=>
+  '<details><summary>'+escapeHTML(t.title)+' · '+escapeHTML(t.subject)+'</summary><p>'+escapeHTML(t.desc)+'</p><small>Sample learning note</small></details>'
+ ).join("");
+}
+function escapeHTML(s){
+ return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function chooseClass(n){
+ selectedClass=n;
+ document.getElementById("classResult").classList.remove("hidden");
+ document.getElementById("classResult").innerHTML=
+  "<strong>Class "+n+" selected!</strong><br>Choose a subject below to explore available sample topics.";
+ document.getElementById("search").value="";
+ selectedSubject="All";
+ document.querySelectorAll(".subject-btn").forEach((b,i)=>b.classList.toggle("active",i===0));
+ renderTopics();
+ document.getElementById("study").scrollIntoView({behavior:"smooth"});
+}
+function chooseSubject(s,button){
+ selectedSubject=s;
+ document.querySelectorAll(".subject-btn").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderTopics();
+}
+function searchTopics(){renderTopics();}
+document.getElementById("search").addEventListener("input",renderTopics);
+document.getElementById("quizForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const answers={q1:"b",q2:"c",q3:"a"};
+ let score=0;
+ for(const key in answers){
+  if(new FormData(this).get(key)===answers[key])score++;
+ }
+ const result=document.getElementById("quizResult");
+ result.classList.remove("hidden");
+ result.textContent="Your score: "+score+" out of 3. "+(score===3?"Excellent work!":score===2?"Good job! Review the missed answer.":"Keep practising—you can try again!");
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+renderTopics();
+</script>
+</body>
+  </html>
+                         
