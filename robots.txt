@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rinadevi123456789y-max.github.io/EduQuest/sitemap.xml
