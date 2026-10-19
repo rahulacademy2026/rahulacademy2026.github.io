@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101a35">
-<title>3D Science Lab | Rahul Academy</title>
+<title>Upgraded 3D Science Lab | Rahul Academy</title>
 <style>
 :root{--bg:#0b1224;--panel:#121e38;--line:#2a3b60;--text:#f4f7ff;--muted:#b7c5e4;--accent:#72e0c1}
 *{box-sizing:border-box}
@@ -44,8 +44,8 @@ footer{text-align:center;color:var(--muted);padding:22px 12px}
 <body>
 <header>
   <a href="index.html">← Back to Rahul Academy</a>
-  <h1>🔬 3D Science Lab</h1>
-  <p>Explore Physics, Biology, Chemistry and Earth Science</p>
+  <h1>🔬 3D Science Lab — Upgrade</h1>
+  <p>Explore interactive 3D models in Physics, Biology, Chemistry and Earth Science</p>
 </header>
 <main class="wrap">
   <div class="toolbar" aria-label="Subject filters">
@@ -85,6 +85,10 @@ const models = [
  {id:'cell',subject:'biology',emoji:'🦠',title:'Animal cell',heading:'Inside an animal cell',text:'Cells are the basic units of living things. This simplified model shows a cell membrane, cytoplasm and nucleus.',fact:'The nucleus stores most of a cell’s genetic information. Cells contain many other structures too.'},
  {id:'dna',subject:'biology',emoji:'🧬',title:'DNA helix',heading:'What is DNA?',text:'DNA carries genetic instructions used by living organisms. Its structure is often represented as a twisted ladder called a double helix.',fact:'The sides of the DNA ladder are sugar-phosphate chains; the rungs are paired bases.'},
  {id:'heart',subject:'biology',emoji:'❤️',title:'Human heart',heading:'What does the heart do?',text:'The heart is a muscular organ that pumps blood through the lungs and the rest of the body.',fact:'The right side sends blood to the lungs; the left side pumps oxygen-rich blood to the body.'},
+ {id:'brain',subject:'biology',emoji:'🧠',title:'Human brain',heading:'What does the brain do?',text:'The brain is the control centre of the nervous system. It helps with thinking, memory, movement, senses and many automatic body functions.',fact:'Different brain regions work together; this model is a simplified teaching representation.'},
+ {id:'lungs',subject:'biology',emoji:'🫁',title:'Human lungs',heading:'How do lungs help us breathe?',text:'The lungs exchange gases: oxygen moves into the blood and carbon dioxide moves out. The diaphragm helps air move in and out.',fact:'Tiny air sacs called alveoli provide a large surface for gas exchange.'},
+ {id:'skeleton',subject:'biology',emoji:'🦴',title:'Human skeleton',heading:'Why do we need a skeleton?',text:'The skeleton supports the body, protects organs and works with muscles to produce movement.',fact:'An adult human typically has 206 bones, though the number can vary.'},
+ {id:'plantcell',subject:'biology',emoji:'🌱',title:'Plant cell',heading:'What makes a plant cell different?',text:'Plant cells have a cell wall, cell membrane, cytoplasm, nucleus, chloroplasts and a large central vacuole.',fact:'Chloroplasts help plants use light energy during photosynthesis.'},
  {id:'water',subject:'chemistry',emoji:'💧',title:'Water molecule',heading:'What is a water molecule?',text:'A water molecule contains two hydrogen atoms bonded to one oxygen atom. Its chemical formula is H₂O.',fact:'The molecule has a bent shape, not a straight line.'},
  {id:'molecule',subject:'chemistry',emoji:'🧪',title:'Simple molecule',heading:'How do atoms bond?',text:'Atoms can join through chemical bonds to form molecules. This ball-and-stick model helps show how atoms connect.',fact:'The colours are visual labels only; real atoms are not coloured balls.'},
  {id:'earth',subject:'earth',emoji:'🌍',title:'Planet Earth',heading:'Our planet Earth',text:'Earth has land, oceans and an atmosphere. Its rotation causes day and night.',fact:'Earth takes about 24 hours to rotate once and about 365 days to orbit the Sun.'}
@@ -146,6 +150,40 @@ function drawModel(m){
   for(let i=0;i<34;i++){const t=i*.32,y=(i-16)*.09,x=Math.cos(t)*.85,z=Math.sin(t)*.85;const x2=Math.cos(t+Math.PI)*.85,z2=Math.sin(t+Math.PI)*.85;sphere(x,y,z,.09,0x70d6ff);sphere(x2,y,z2,.09,0xffa6c9);if(i%2===0)rod([x,y,z],[x2,y,z2],.035,0xe6eaff)}
  }else if(m.id==='heart'){
   sphere(-.32,.15,0,.65,0xe65f78);sphere(.32,.15,0,.65,0xe65f78);const lower=new T.Mesh(new T.ConeGeometry(.83,1.25,24),mat(0xe65f78));lower.position.set(0,-.55,0);lower.rotation.z=Math.PI;root.add(lower);rod([-.2,.6,0],[-.3,1.35,0],.13,0x6ab9ff);rod([.25,.6,0],[.45,1.35,0],.13,0xff7777);
+ }else if(m.id==='brain'){
+  // Simplified brain lobes and folds
+  const brainMat=mat(0xe99bb6);
+  for(let i=0;i<15;i++){
+    const a=i*2.399, rr=.25+(i%4)*.18;
+    const lobe=new T.Mesh(new T.SphereGeometry(.38+(i%3)*.06,18,14),brainMat);
+    lobe.position.set(Math.cos(a)*rr,Math.sin(a)*rr*.78,Math.sin(i*1.7)*.38);root.add(lobe);
+  }
+  for(let i=0;i<5;i++)rod([-.8,(i-2)*.22,.05],[.8,(i-2)*.22,.05],.025,0xffd2e1);
+ }else if(m.id==='lungs'){
+  // Two lung lobes with trachea and bronchi
+  rod([0,1.5,0],[0,.35,0],.16,0x9bdcff);
+  rod([0,.45,0],[-.5,-.05,0],.09,0x9bdcff);rod([0,.45,0],[.5,-.05,0],.09,0x9bdcff);
+  const lungL=new T.Mesh(new T.SphereGeometry(.72,24,18),new T.MeshStandardMaterial({color:0xf28eaa,roughness:.55}));
+  lungL.scale.set(.72,1.15,.55);lungL.position.set(-.72,-.45,0);root.add(lungL);
+  const lungR=lungL.clone();lungR.position.x=.72;root.add(lungR);
+  for(let i=0;i<6;i++){rod([-.7+(i%3)*.12,-.15-(i%3)*.25,.35],[.7-(i%3)*.12,-.15-(i%3)*.25,.35],.018,0xffd8e3)}
+ }else if(m.id==='skeleton'){
+  // Educational simplified skeleton: skull, spine, ribs, pelvis and limbs
+  sphere(0,1.55,0,.42,0xe9e3ce);
+  sphere(-.13,1.6,.34,.07,0x26324a);sphere(.13,1.6,.34,.07,0x26324a);
+  rod([0,1.15,0],[0,-.65,0],.11,0xe9e3ce);
+  for(let i=0;i<6;i++){const y=.95-i*.22;ring(.52-i*.025,0xe9e3ce,.15);const rib=root.children[root.children.length-1];rib.position.y=y;}
+  rod([0,.95,0],[-.8,.45,0],.075,0xe9e3ce);rod([-.8,.45,0],[-1.15,-.35,0],.07,0xe9e3ce);
+  rod([0,.95,0],[.8,.45,0],.075,0xe9e3ce);rod([.8,.45,0],[1.15,-.35,0],.07,0xe9e3ce);
+  rod([0,-.65,0],[-.42,-1.05,0],.09,0xe9e3ce);rod([-.42,-1.05,0],[-.55,-1.8,0],.07,0xe9e3ce);
+  rod([0,-.65,0],[.42,-1.05,0],.09,0xe9e3ce);rod([.42,-1.05,0],[.55,-1.8,0],.07,0xe9e3ce);
+ }else if(m.id==='plantcell'){
+  // Rounded rectangular plant cell wall and internal structures
+  const wall=new T.Mesh(new T.BoxGeometry(3.2,2.15,1.5),new T.MeshStandardMaterial({color:0x79d69a,transparent:true,opacity:.28,roughness:.5}));root.add(wall);
+  const inner=new T.Mesh(new T.BoxGeometry(2.92,1.88,1.28),new T.MeshStandardMaterial({color:0xb8ef9a,transparent:true,opacity:.18}));root.add(inner);
+  sphere(-.75,.4,.15,.34,0x9c8bff);
+  for(let i=0;i<7;i++){const a=i*2.399;sphere(Math.cos(a)*.9,Math.sin(a)*.55,.35,.13,0x35a96a)}
+  const vac=new T.Mesh(new T.BoxGeometry(1.25,.9,.55),new T.MeshStandardMaterial({color:0x8fd9ff,transparent:true,opacity:.6}));vac.position.set(.45,-.25,.05);root.add(vac);
  }else if(m.id==='water'){
   sphere(0,0,0,.48,0xff5b67);sphere(-.55,.48,0,.29,0x91d7ff);sphere(.55,.48,0,.29,0x91d7ff);rod([-.18,.32,0],[-.42,.45,0],.09,0xdce8ff);rod([.18,.32,0],[.42,.45,0],.09,0xdce8ff);
  }else if(m.id==='molecule'){
@@ -157,4 +195,4 @@ function drawModel(m){
 init3D();
 </script>
 </body>
-</html>
+                                                                  </html>
