@@ -1,229 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta name="google-site-verification" content="ZqtmdlRp0kcKdAdDawT1N8sD2Z0B92JX527F37lACTQ" /> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123b70">
+<meta name="description" content="Rahul Academy: Class 9 study notes, subject guides, practice quizzes and revision resources.">
 <title>Rahul Academy | Learn. Grow. Succeed.</title>
 <style>
-:root{--blue:#123b70;--light:#edf4ff;--gold:#ffca55;--ink:#18243a;--muted:#66758a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#f6f8fc;color:var(--ink);line-height:1.6}
-header{background:var(--blue);color:white;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.logo{font-size:22px;font-weight:bold}
-.logo span{color:var(--gold)}
-nav{display:flex;gap:8px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;padding:8px 10px;border-radius:7px}
-nav a:hover{background:#ffffff22}
-.hero{padding:55px 6%;background:linear-gradient(135deg,#123b70,#2869ae);color:white}
-.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.15;margin:10px 0}
-.hero p{max-width:620px;color:#e2ecff}
-.btn{border:0;border-radius:8px;padding:12px 17px;background:var(--gold);color:#18243a;font-weight:bold;cursor:pointer;display:inline-block;text-decoration:none}
-.btn:hover{filter:brightness(.95)}
-.btn.secondary{background:var(--blue);color:white}
-.wrap{max-width:1100px;margin:auto;padding:28px 16px}
-.section-title{margin:0 0 7px;font-size:26px}
-.muted{color:var(--muted)}
-.stats,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px}
-.stat,.card{background:white;padding:20px;border-radius:14px;border:1px solid #e4eaf3;box-shadow:0 4px 15px #152d4b08}
-.stat strong{font-size:25px;color:var(--blue)}
-.card h3{margin:8px 0}
-.emoji{font-size:30px}
-.searchbar{display:flex;gap:8px;margin:16px 0}
-input,select{min-width:0;width:100%;padding:12px;border:1px solid #ccd6e5;border-radius:8px;font-size:16px;background:white}
-.searchbar input{flex:1}
-.subjects{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.subject-btn{border:1px solid #cbd8eb;background:white;padding:9px 12px;border-radius:20px;cursor:pointer}
-.subject-btn.active,.subject-btn:hover{background:var(--blue);color:white}
-.result{margin-top:16px;padding:18px;background:var(--light);border-radius:12px;white-space:pre-line}
-details{background:white;border:1px solid #e1e8f1;border-radius:10px;margin:10px 0;padding:14px}
-summary{font-weight:bold;cursor:pointer}
-.quiz-question{margin:16px 0;padding:15px;background:#f2f6fd;border-radius:10px}
-.quiz-question label{display:block;padding:5px;cursor:pointer}
-.notice{padding:12px;background:#fff5d9;border-radius:9px;font-size:14px}
-footer{text-align:center;background:#102e55;color:white;padding:24px;margin-top:25px}
-.hidden{display:none}
-@media(max-width:480px){header{padding:14px}nav{gap:2px}nav a{padding:7px;font-size:14px}.hero{padding:40px 20px}.searchbar{flex-wrap:wrap}}
+:root{--navy:#102e55;--blue:#2563eb;--sky:#eaf3ff;--ink:#172033;--muted:#64748b;--white:#fff;--green:#087f5b;--border:#dbe5f0;--gold:#fff5d9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f7faff;line-height:1.6}
+header{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;padding:12px max(4%,calc((100% - 1150px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;box-shadow:0 4px 18px #102e5522}
+.logo{font-size:1.25rem;font-weight:800;white-space:nowrap}.logo span{color:#93c5fd}
+nav{display:flex;gap:8px;flex-wrap:wrap}nav a{color:#fff;text-decoration:none;padding:7px 10px;border-radius:9px;font-size:.94rem}nav a:hover,nav a:focus{background:#ffffff20}
+main{max-width:1150px;margin:auto;padding:22px 16px}.hero{background:linear-gradient(135deg,#102e55,#2563eb);color:#fff;border-radius:24px;padding:clamp(26px,6vw,64px);display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:center;overflow:hidden}
+.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;font-weight:800;color:#bfdbfe}.hero h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.1;margin:12px 0}.hero p{color:#e5efff;max-width:650px}.hero-card{background:#ffffff16;border:1px solid #ffffff35;border-radius:20px;padding:22px}.hero-card strong{font-size:1.15rem}.hero-card li{margin:8px 0}
+.btn{display:inline-block;border:0;border-radius:11px;padding:11px 16px;background:var(--blue);color:#fff;text-decoration:none;font-weight:750;cursor:pointer;font-size:.95rem}.btn:hover{filter:brightness(.94)}.btn.light{background:#fff;color:var(--navy);margin:6px 8px 0 0}.btn.outline{background:transparent;border:1px solid var(--border);color:var(--navy)}
+section{margin:34px 0}.section-title{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 4px;color:var(--navy)}.muted{color:var(--muted);margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--border);border-radius:17px;padding:20px;box-shadow:0 5px 20px #102e5508}.card h3{margin:6px 0;color:var(--navy)}.icon{font-size:1.7rem}.card p{color:var(--muted)}.tag{display:inline-block;background:var(--sky);color:#1d4ed8;border-radius:30px;padding:4px 9px;font-size:.78rem;font-weight:750}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.toolbar input,.toolbar select,textarea{width:100%;max-width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:#fff}.toolbar input{flex:1;min-width:180px}.toolbar select{width:auto;min-width:150px}
+.subject-card{display:flex;flex-direction:column;align-items:flex-start}.subject-card .btn{margin-top:auto}.notice{padding:13px 15px;background:var(--gold);border:1px solid #f2d88b;border-radius:12px;color:#6c4b00}
+details{border:1px solid var(--border);border-radius:12px;background:#fff;margin:10px 0;padding:13px 15px}summary{font-weight:750;color:var(--navy);cursor:pointer}details p{margin-bottom:0}
+.quiz-box{background:#fff;border:1px solid var(--border);border-radius:17px;padding:20px}.question{padding:15px 0;border-bottom:1px solid var(--border)}.question p{font-weight:750;margin:0 0 9px}.question label{display:block;padding:5px 0;cursor:pointer}.result{font-weight:800;margin-top:14px}.small{font-size:.88rem;color:var(--muted)}
+footer{background:var(--navy);color:#dbeafe;text-align:center;padding:25px 16px;margin-top:40px}footer a{color:#fff}
+.hidden{display:none!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}header{justify-content:center}nav{justify-content:center}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.hero{border-radius:17px}nav a{font-size:.88rem;padding:6px 8px}main{padding:14px 12px}}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">📘 Rahul <span>Academy</span></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#classes">Classes</a>
-    <a href="#study">Study</a>
-    <a href="#quiz">Quiz</a>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#classes">Subjects</a><a href="#study">Study Notes</a><a href="#quiz">Quiz</a><a href="#about">About</a>
   </nav>
 </header>
-
 <main>
-<section class="hero" id="home">
-  <p>WELCOME TO YOUR LEARNING HOME</p>
-  <h1>Learn. Grow. Succeed.</h1>
-  <p>Understand concepts, revise important topics, practise questions and build confidence every day.</p>
-  <a class="btn" href="#classes">Start Learning →</a>
-  <a class="btn" href="#quiz" style="margin-left:7px">Try a Quiz</a>
-</section>
-
-<section class="wrap">
-  <h2 class="section-title">Your learning dashboard</h2>
-  <p class="muted">Everything you need to begin your studies.</p>
-  <div class="stats">
-    <div class="stat">📚<br><strong>Classes 6–10</strong><br><span class="muted">Explore learning topics</span></div>
-    <div class="stat">✍️<br><strong>Practice</strong><br><span class="muted">Test what you know</span></div>
-    <div class="stat">🎯<br><strong>Revise</strong><br><span class="muted">Build strong foundations</span></div>
-  </div>
-</section>
-
-<section class="wrap" id="classes">
-  <h2 class="section-title">Choose your class</h2>
-  <p class="muted">Select a class to explore its subjects.</p>
-  <div class="grid">
-    <div class="card"><div class="emoji">📗</div><h3>Class 6</h3><p>Build your basics.</p><button class="btn secondary" onclick="chooseClass(6)">Explore Class 6</button></div>
-    <div class="card"><div class="emoji">📘</div><h3>Class 7</h3><p>Strengthen your concepts.</p><button class="btn secondary" onclick="chooseClass(7)">Explore Class 7</button></div>
-    <div class="card"><div class="emoji">📙</div><h3>Class 8</h3><p>Prepare for higher classes.</p><button class="btn secondary" onclick="chooseClass(8)">Explore Class 8</button></div>
-    <div class="card"><div class="emoji">🎓</div><h3>Class 9</h3><p>Study and revise key topics.</p><button class="btn secondary" onclick="chooseClass(9)">Explore Class 9</button></div>
-    <div class="card"><div class="emoji">🏆</div><h3>Class 10</h3><p>Practise for your exams.</p><button class="btn secondary" onclick="chooseClass(10)">Explore Class 10</button></div>
-  </div>
-  <div id="classResult" class="result hidden" aria-live="polite"></div>
-</section>
-
-<section class="wrap" id="study">
-  <h2 class="section-title">Study corner</h2>
-  <p class="muted">Choose a subject and search the topics available on this demo website.</p>
-  <div class="searchbar">
-    <input id="search" type="search" placeholder="Search topics, e.g. fractions" aria-label="Search study topics">
-    <button class="btn secondary" onclick="searchTopics()">Search</button>
-  </div>
-  <div class="subjects" id="subjectButtons">
-    <button class="subject-btn active" onclick="chooseSubject('All',this)">All</button>
-    <button class="subject-btn" onclick="chooseSubject('Mathematics',this)">Mathematics</button>
-    <button class="subject-btn" onclick="chooseSubject('Science',this)">Science</button>
-    <button class="subject-btn" onclick="chooseSubject('English',this)">English</button>
-    <button class="subject-btn" onclick="chooseSubject('Social Science',this)">Social Science</button>
-  </div>
-  <div id="topicList" class="grid"></div>
-  <p class="notice">Learning content on this starter website is sample content. Check your official school or board syllabus for the complete 2026–27 curriculum.</p>
-</section>
-
-<section class="wrap" id="quiz">
-  <h2 class="section-title">Quick knowledge quiz</h2>
-  <p class="muted">Answer these three questions and check your score.</p>
-  <form id="quizForm">
-    <div class="quiz-question">
-      <strong>1. What is 7 × 8?</strong>
-      <label><input type="radio" name="q1" value="a" required> 54</label>
-      <label><input type="radio" name="q1" value="b"> 56</label>
-      <label><input type="radio" name="q1" value="c"> 64</label>
+  <section class="hero" id="home">
+    <div>
+      <div class="eyebrow">Your learning partner</div>
+      <h1>Learn. Grow.<br>Succeed.</h1>
+      <p>Understand concepts, revise important topics, and practise what you learn. Welcome to your Class 9 learning dashboard.</p>
+      <a class="btn light" href="#classes">Explore subjects →</a>
+      <a class="btn light" href="#quiz">Try a quiz</a>
     </div>
-    <div class="quiz-question">
-      <strong>2. Which gas do plants absorb during photosynthesis?</strong>
-      <label><input type="radio" name="q2" value="a" required> Oxygen</label>
-      <label><input type="radio" name="q2" value="b"> Nitrogen</label>
-      <label><input type="radio" name="q2" value="c"> Carbon dioxide</label>
+    <div class="hero-card">
+      <strong>🎯 Your study goals</strong>
+      <ul><li>Learn a topic every day</li><li>Make short revision notes</li><li>Practise questions regularly</li><li>Check your progress with quizzes</li></ul>
     </div>
-    <div class="quiz-question">
-      <strong>3. What is the plural of “child”?</strong>
-      <label><input type="radio" name="q3" value="a" required> Children</label>
-      <label><input type="radio" name="q3" value="b"> Childs</label>
-      <label><input type="radio" name="q3" value="c"> Childes</label>
-    </div>
-    <button class="btn" type="submit">Check My Score</button>
-  </form>
-  <div id="quizResult" class="result hidden" aria-live="polite"></div>
-</section>
+  </section>
 
-<section class="wrap" id="about">
-  <h2 class="section-title">About Rahul Academy</h2>
-  <div class="card">
-    <p>Rahul Academy is a student learning project designed to make studying more organized and accessible on mobile phones.</p>
-    <p>Use the subject finder, explore classes and practise with the quiz. More lessons can be added as you develop the website.</p>
-  </div>
-</section>
+  <section aria-labelledby="dash-title">
+    <h2 class="section-title" id="dash-title">Your learning dashboard</h2>
+    <p class="muted">Everything you need to begin learning in one place.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">📚</div><h3>5 core subjects</h3><p>Maths, Science, English, Social Science and Hindi.</p></div>
+      <div class="card"><div class="icon">✍️</div><h3>Study and revise</h3><p>Use chapter guides and write your own notes.</p></div>
+      <div class="card"><div class="icon">🎯</div><h3>Practise quizzes</h3><p>Answer questions and get your score instantly.</p></div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <h2 class="section-title">Class 9 subjects</h2>
+    <p class="muted">Choose a subject to view its starter topic guide.</p>
+    <div class="toolbar"><input id="subjectSearch" type="search" placeholder="Search subjects..." aria-label="Search subjects"><select id="subjectFilter" aria-label="Filter subjects"><option value="all">All subjects</option><option>Core</option><option>Language</option></select></div>
+    <div class="grid" id="subjectGrid">
+      <article class="card subject-card" data-name="mathematics maths" data-type="Core"><div class="icon">➗</div><span class="tag">Core</span><h3>Mathematics</h3><p>Number systems, algebra, coordinate geometry, geometry, mensuration and statistics.</p><a class="btn" href="#study" data-topic="math">View study guide</a></article>
+      <article class="card subject-card" data-name="science physics chemistry biology" data-type="Core"><div class="icon">🔬</div><span class="tag">Core</span><h3>Science</h3><p>Explore matter, living organisms, motion, force, energy and the environment.</p><a class="btn" href="#study" data-topic="science">View study guide</a></article>
+      <article class="card subject-card" data-name="social science history geography civics economics" data-type="Core"><div class="icon">🌍</div><span class="tag">Core</span><h3>Social Science</h3><p>History, geography, democratic politics and economics topic guides.</p><a class="btn" href="#study" data-topic="social">View study guide</a></article>
+      <article class="card subject-card" data-name="english literature grammar writing" data-type="Language"><div class="icon">📖</div><span class="tag">Language</span><h3>English</h3><p>Reading comprehension, grammar, writing skills and literature revision.</p><a class="btn" href="#study" data-topic="english">View study guide</a></article>
+      <article class="card subject-card" data-name="hindi व्याकरण साहित्य" data-type="Language"><div class="icon">🖋️</div><span class="tag">Language</span><h3>Hindi</h3><p>Reading, writing, grammar and literature practice.</p><a class="btn" href="#study" data-topic="hindi">View study guide</a></article>
+      <article class="card subject-card" data-name="revision practice exam" data-type="Core"><div class="icon">🧠</div><span class="tag">Practice</span><h3>Revision corner</h3><p>Review definitions, formulas, key terms and mistakes from practice.</p><a class="btn" href="#quiz">Start a quiz</a></article>
+    </div>
+  </section>
+
+  <section id="study">
+    <h2 class="section-title">Study notes and chapter guides</h2>
+    <p class="muted">Starter summaries to help you revise. Open a subject below.</p>
+    <div class="notice"><strong>Curriculum note:</strong> These are starter topic guides, not a verified complete 2026 syllabus. Confirm your exact chapter list with the latest CBSE school curriculum and your teacher before exam preparation.</div>
+    <details open id="notes-math"><summary>➗ Mathematics — starter guide</summary><p><strong>Number systems:</strong> Learn rational and irrational numbers and how to represent real numbers on a number line.</p><p><strong>Algebra:</strong> Practise polynomials, identities and factorisation. Show each step clearly and check your answer.</p><p><strong>Geometry:</strong> Draw labelled figures, state the theorem you use, and give reasons for each step of a proof.</p><p><strong>Revision tip:</strong> Keep a formula notebook and solve a few problems without looking at worked examples.</p></details>
+    <details id="notes-science"><summary>🔬 Science — starter guide</summary><p><strong>Matter:</strong> Compare solids, liquids and gases by particle spacing, motion and attraction. Review changes of state.</p><p><strong>Motion:</strong> Speed = distance ÷ time. For uniform motion, understand distance-time graphs and units.</p><p><strong>Living organisms:</strong> Review cell structures and the functions of the cell membrane, cytoplasm and nucleus.</p><p><strong>Revision tip:</strong> Practise labelled diagrams and learn definitions in your own words.</p></details>
+    <details id="notes-social"><summary>🌍 Social Science — starter guide</summary><p><strong>History:</strong> Build a timeline and connect events with causes and consequences.</p><p><strong>Geography:</strong> Practise maps, location, climate and how physical features affect people.</p><p><strong>Democratic politics:</strong> Learn key terms, institutions, rights and responsibilities with examples.</p><p><strong>Economics:</strong> Understand basic economic terms and use real-life examples to explain them.</p></details>
+    <details id="notes-english"><summary>📖 English — starter guide</summary><p><strong>Reading:</strong> Read the question first, locate evidence in the passage and answer in your own words.</p><p><strong>Grammar:</strong> Practise tenses, subject-verb agreement, reported speech and sentence editing as assigned by your school.</p><p><strong>Writing:</strong> Plan the format, audience and main points before writing. Check spelling and punctuation.</p></details>
+    <details id="notes-hindi"><summary>🖋️ Hindi — starter guide</summary><p>Revise पाठ का सार, लेखक/कवि का परिचय where required, शब्दार्थ and प्रश्न-उत्तर. Practise व्याकरण and लेखन according to your school's prescribed textbook and syllabus.</p><p><strong>Revision tip:</strong> Write answers in clear sentences and check मात्रा, वर्तनी and punctuation.</p></details>
+    <p class="small">You can expand these guides by editing this HTML file and adding your teacher-approved chapter notes.</p>
+  </section>
+
+  <section id="quiz">
+    <h2 class="section-title">Practice quiz</h2>
+    <p class="muted">Answer these sample questions, then tap “Check my score”. Your score appears on this page.</p>
+    <div class="quiz-box">
+      <form id="quizForm">
+        <div class="question"><p>1. Which of these is a rational number?</p><label><input type="radio" name="q1" value="a"> √2</label><label><input type="radio" name="q1" value="b"> 3/4</label><label><input type="radio" name="q1" value="c"> π</label></div>
+        <div class="question"><p>2. What is the SI unit of speed?</p><label><input type="radio" name="q2" value="a"> metre</label><label><input type="radio" name="q2" value="b"> second</label><label><input type="radio" name="q2" value="c"> metre per second</label></div>
+        <div class="question"><p>3. Which cell structure contains genetic material and helps control cell activities?</p><label><input type="radio" name="q3" value="a"> Nucleus</label><label><input type="radio" name="q3" value="b"> Cell wall</label><label><input type="radio" name="q3" value="c"> Vacuole</label></div>
+        <div class="question"><p>4. Which is commonly used to show places and physical features of Earth?</p><label><input type="radio" name="q4" value="a"> A map</label><label><input type="radio" name="q4" value="b"> A poem</label><label><input type="radio" name="q4" value="c"> A dialogue</label></div>
+        <div class="question"><p>5. Which sentence is correctly punctuated?</p><label><input type="radio" name="q5" value="a"> where are you going.</label><label><input type="radio" name="q5" value="b"> Where are you going?</label><label><input type="radio" name="q5" value="c"> Where are you going,</label></div>
+        <button class="btn" type="submit">Check my score</button>
+        <button class="btn outline" type="reset" id="resetQuiz">Try again</button>
+      </form>
+      <div id="quizResult" class="result" role="status" aria-live="polite"></div>
+      <p class="small">This is a short sample quiz, not an official exam paper.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Rahul Academy</h2>
+    <div class="card"><p>Rahul Academy is a student learning project designed to organise study guides, revision ideas and practice quizzes in one easy-to-use place.</p><p><strong>Study smart:</strong> follow your school's syllabus, practise regularly, ask questions and revise your mistakes.</p></div>
+  </section>
 </main>
-
-<footer>
-  <strong>Rahul Academy</strong>
-  <p>Learn. Grow. Succeed.</p>
-  <small>Educational project · © <span id="year"></span> Rahul Academy</small>
-</footer>
-
+<footer><strong>📘 Rahul Academy</strong><br>Learn. Grow. Succeed.<br><span class="small" style="color:#dbeafe">Student learning project · Check official curriculum updates with your school.</span></footer>
 <script>
-const topics = [
- {subject:"Mathematics",title:"Fractions",desc:"Fractions represent parts of a whole. For example, 1/2 means one of two equal parts.",classes:[6,7,8]},
- {subject:"Mathematics",title:"Algebra",desc:"Use letters such as x to represent unknown numbers. Example: x + 3 = 7 gives x = 4.",classes:[7,8,9,10]},
- {subject:"Mathematics",title:"Linear Equations",desc:"An equation states that two expressions are equal. Solve by keeping both sides balanced.",classes:[8,9,10]},
- {subject:"Mathematics",title:"Geometry",desc:"Study points, lines, angles, triangles and other shapes.",classes:[6,7,8,9,10]},
- {subject:"Science",title:"Matter",desc:"Matter has mass and occupies space. Common states include solids, liquids and gases.",classes:[6,9]},
- {subject:"Science",title:"Cells",desc:"The cell is the basic structural and functional unit of living organisms.",classes:[8,9,10]},
- {subject:"Science",title:"Force and Motion",desc:"A force can change an object's motion or shape. Motion describes a change in position over time.",classes:[8,9,10]},
- {subject:"Science",title:"Ecosystems",desc:"Ecosystems include living organisms interacting with each other and their environment.",classes:[6,7,8,9,10]},
- {subject:"English",title:"Grammar",desc:"Learn parts of speech, sentence structure, tenses and punctuation.",classes:[6,7,8,9,10]},
- {subject:"English",title:"Reading Comprehension",desc:"Read carefully, identify the main idea and use evidence from the passage to answer questions.",classes:[6,7,8,9,10]},
- {subject:"Social Science",title:"History",desc:"Study past events, people and societies using historical evidence.",classes:[6,7,8,9,10]},
- {subject:"Social Science",title:"Geography",desc:"Explore Earth's landforms, climate, resources and human environments.",classes:[6,7,8,9,10]},
- {subject:"Social Science",title:"Civics",desc:"Learn about government, citizens, rights, responsibilities and democracy.",classes:[6,7,8,9,10]}
-];
-let selectedSubject = "All";
-let selectedClass = 0;
+(function(){
+  const search=document.getElementById('subjectSearch');
+  const filter=document.getElementById('subjectFilter');
+  const cards=[...document.querySelectorAll('.subject-card')];
+  function filterSubjects(){
+    const q=search.value.trim().toLowerCase();
+    const type=filter.value;
+    cards.forEach(card=>{
+      const matchesText=(card.dataset.name+' '+card.innerText).toLowerCase().includes(q);
+      const matchesType=type==='all'||card.dataset.type===type;
+      card.classList.toggle('hidden',!(matchesText&&matchesType));
+    });
+  }
+  search.addEventListener('input',filterSubjects);
+  filter.addEventListener('change',filterSubjects);
 
-function renderTopics(){
- const query = document.getElementById("search").value.trim().toLowerCase();
- const filtered = topics.filter(t =>
-  (selectedSubject==="All" || t.subject===selectedSubject) &&
-  (!selectedClass || t.classes.includes(selectedClass)) &&
-  (!query || (t.title+" "+t.desc+" "+t.subject).toLowerCase().includes(query))
- );
- const list = document.getElementById("topicList");
- if(!filtered.length){
-  list.innerHTML='<div class="card"><h3>No matching topics found</h3><p>Try another keyword or select a different class or subject.</p></div>';
-  return;
- }
- list.innerHTML=filtered.map(t=>
-  '<details><summary>'+escapeHTML(t.title)+' · '+escapeHTML(t.subject)+'</summary><p>'+escapeHTML(t.desc)+'</p><small>Sample learning note</small></details>'
- ).join("");
-}
-function escapeHTML(s){
- return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
-function chooseClass(n){
- selectedClass=n;
- document.getElementById("classResult").classList.remove("hidden");
- document.getElementById("classResult").innerHTML=
-  "<strong>Class "+n+" selected!</strong><br>Choose a subject below to explore available sample topics.";
- document.getElementById("search").value="";
- selectedSubject="All";
- document.querySelectorAll(".subject-btn").forEach((b,i)=>b.classList.toggle("active",i===0));
- renderTopics();
- document.getElementById("study").scrollIntoView({behavior:"smooth"});
-}
-function chooseSubject(s,button){
- selectedSubject=s;
- document.querySelectorAll(".subject-btn").forEach(b=>b.classList.remove("active"));
- button.classList.add("active");
- renderTopics();
-}
-function searchTopics(){renderTopics();}
-document.getElementById("search").addEventListener("input",renderTopics);
-document.getElementById("quizForm").addEventListener("submit",function(e){
- e.preventDefault();
- const answers={q1:"b",q2:"c",q3:"a"};
- let score=0;
- for(const key in answers){
-  if(new FormData(this).get(key)===answers[key])score++;
- }
- const result=document.getElementById("quizResult");
- result.classList.remove("hidden");
- result.textContent="Your score: "+score+" out of 3. "+(score===3?"Excellent work!":score===2?"Good job! Review the missed answer.":"Keep practising—you can try again!");
-});
-document.getElementById("year").textContent=new Date().getFullYear();
-renderTopics();
+  document.querySelectorAll('[data-topic]').forEach(link=>{
+    link.addEventListener('click',()=>{
+      const target=document.getElementById('notes-'+link.dataset.topic);
+      if(target) target.open=true;
+    });
+  });
+
+  const answers={q1:'b',q2:'c',q3:'a',q4:'a',q5:'b'};
+  const form=document.getElementById('quizForm');
+  const result=document.getElementById('quizResult');
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    let score=0,answered=0;
+    Object.keys(answers).forEach(name=>{
+      const chosen=form.querySelector('input[name="'+name+'"]:checked');
+      if(chosen){answered++;if(chosen.value===answers[name])score++;}
+    });
+    if(answered<Object.keys(answers).length){
+      result.textContent='You answered '+answered+' of 5 questions. Please answer every question before checking your score.';
+      return;
+    }
+    result.textContent='Your score: '+score+'/5 ('+Math.round(score/5*100)+'%). '+(score===5?'Excellent work!':score>=3?'Good effort! Review the topics you missed.':'Keep practising—you can improve with revision.');
+  });
+  form.addEventListener('reset',()=>{result.textContent='';});
+})();
 </script>
 </body>
-  </html>
-
- 
+                                                                                                                                          </html>
