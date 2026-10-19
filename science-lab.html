@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101a35">
+<title>3D Science Lab | Rahul Academy</title>
+<style>
+:root{--bg:#0b1224;--panel:#121e38;--line:#2a3b60;--text:#f4f7ff;--muted:#b7c5e4;--accent:#72e0c1}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(160deg,#0b1224,#14264a);color:var(--text)}
+header{padding:22px 16px 18px;text-align:center;border-bottom:1px solid var(--line)}
+header a{color:var(--accent);text-decoration:none;font-weight:700}
+h1{font-size:clamp(1.7rem,5vw,2.5rem);margin:12px 0 6px}
+header p{margin:0;color:var(--muted)}
+.wrap{max-width:1100px;margin:auto;padding:16px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:4px 0 16px}
+button,select{font:inherit;border:1px solid #3c527b;background:#172747;color:var(--text);border-radius:12px;padding:11px 14px;min-height:44px;cursor:pointer}
+button.active,button:hover{background:#245b64;border-color:var(--accent)}
+.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.8fr);gap:16px}
+.card{background:rgba(18,30,56,.94);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.viewer-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+#stage{height:390px;position:relative;background:radial-gradient(ellipse at center,#1c3960,#081225 75%);touch-action:none}
+#stage canvas{display:block;width:100%;height:100%}
+#fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;color:var(--muted)}
+#fallback .orb{font-size:95px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px) rotate(10deg)}}
+.viewer-foot{padding:12px 16px;color:var(--muted);font-size:.92rem}
+.info{padding:18px}
+.info h2{margin:0 0 8px;font-size:1.4rem}
+.info p{color:var(--muted);line-height:1.55}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.pill{font-size:.8rem;padding:5px 9px;border:1px solid #385075;border-radius:999px;color:#c9f5e9}
+.model-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}
+.model-btn{text-align:left;display:flex;align-items:center;gap:9px}
+.model-btn span:first-child{font-size:1.4rem}
+.model-btn small{display:block;color:var(--muted);font-size:.76rem}
+.note{font-size:.88rem;color:var(--muted);padding:0 16px 16px;line-height:1.5}
+footer{text-align:center;color:var(--muted);padding:22px 12px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}#stage{height:330px}.model-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.model-list{grid-template-columns:1fr}button,select{padding:10px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">← Back to Rahul Academy</a>
+  <h1>🔬 3D Science Lab</h1>
+  <p>Explore Physics, Biology, Chemistry and Earth Science</p>
+</header>
+<main class="wrap">
+  <div class="toolbar" aria-label="Subject filters">
+    <button class="subject active" data-subject="all">All models</button>
+    <button class="subject" data-subject="physics">⚛️ Physics</button>
+    <button class="subject" data-subject="biology">🧬 Biology</button>
+    <button class="subject" data-subject="chemistry">🧪 Chemistry</button>
+    <button class="subject" data-subject="earth">🌍 Earth Science</button>
+  </div>
+  <section class="layout">
+    <div class="card">
+      <div class="viewer-head"><strong id="modelTitle">Atom model</strong><button id="motionBtn" aria-pressed="true">⏸ Pause rotation</button></div>
+      <div id="stage" aria-label="Interactive 3D model viewer">
+        <div id="fallback"><div class="orb" id="fallbackEmoji">⚛️</div><strong>3D model loading…</strong><p>If the model does not load, check your internet connection.</p></div>
+      </div>
+      <div class="viewer-foot">Drag to rotate • Pinch or use mouse wheel to zoom • Tap a model below to switch.</div>
+    </div>
+    <aside class="card">
+      <div class="info">
+        <div class="pills"><span class="pill" id="subjectTag">Physics</span><span class="pill">Class 6–10 friendly</span></div>
+        <h2 id="infoTitle">What is an atom?</h2>
+        <p id="infoText">An atom is a tiny unit of an element. This simplified model shows a nucleus and electrons around it. The electron paths are for learning and are not exact quantum-mechanical paths.</p>
+        <h3>Remember</h3>
+        <p id="factText">The nucleus contains protons and usually neutrons. Electrons occupy regions around the nucleus.</p>
+      </div>
+      <div class="model-list" id="modelList"></div>
+      <p class="note">Learning note: these are simplified teaching models, not to scale. Scientific diagrams may simplify shapes and distances to make ideas easier to understand.</p>
+    </aside>
+  </section>
+</main>
+<footer>© Rahul Academy • Learn by exploring</footer>
+<script type="module">
+const models = [
+ {id:'atom',subject:'physics',emoji:'⚛️',title:'Atom model',heading:'What is an atom?',text:'An atom is a tiny unit of an element. This model shows a nucleus with electrons around it. The electron paths are simplified and are not exact quantum-mechanical paths.',fact:'The nucleus contains protons and usually neutrons. Electrons occupy regions around the nucleus.'},
+ {id:'solar',subject:'physics',emoji:'🪐',title:'Solar system',heading:'How does the solar system work?',text:'Planets orbit the Sun because of gravity. The model shows the Sun and several planets moving around it.',fact:'Planet sizes and distances are not shown to scale. Earth takes about one year to orbit the Sun.'},
+ {id:'circuit',subject:'physics',emoji:'💡',title:'Electric circuit',heading:'What is a circuit?',text:'A circuit is a closed path through which electric current can flow. A simple circuit uses a cell, wires and a bulb.',fact:'If the path is broken, the circuit is open and the bulb will not light.'},
+ {id:'cell',subject:'biology',emoji:'🦠',title:'Animal cell',heading:'Inside an animal cell',text:'Cells are the basic units of living things. This simplified model shows a cell membrane, cytoplasm and nucleus.',fact:'The nucleus stores most of a cell’s genetic information. Cells contain many other structures too.'},
+ {id:'dna',subject:'biology',emoji:'🧬',title:'DNA helix',heading:'What is DNA?',text:'DNA carries genetic instructions used by living organisms. Its structure is often represented as a twisted ladder called a double helix.',fact:'The sides of the DNA ladder are sugar-phosphate chains; the rungs are paired bases.'},
+ {id:'heart',subject:'biology',emoji:'❤️',title:'Human heart',heading:'What does the heart do?',text:'The heart is a muscular organ that pumps blood through the lungs and the rest of the body.',fact:'The right side sends blood to the lungs; the left side pumps oxygen-rich blood to the body.'},
+ {id:'water',subject:'chemistry',emoji:'💧',title:'Water molecule',heading:'What is a water molecule?',text:'A water molecule contains two hydrogen atoms bonded to one oxygen atom. Its chemical formula is H₂O.',fact:'The molecule has a bent shape, not a straight line.'},
+ {id:'molecule',subject:'chemistry',emoji:'🧪',title:'Simple molecule',heading:'How do atoms bond?',text:'Atoms can join through chemical bonds to form molecules. This ball-and-stick model helps show how atoms connect.',fact:'The colours are visual labels only; real atoms are not coloured balls.'},
+ {id:'earth',subject:'earth',emoji:'🌍',title:'Planet Earth',heading:'Our planet Earth',text:'Earth has land, oceans and an atmosphere. Its rotation causes day and night.',fact:'Earth takes about 24 hours to rotate once and about 365 days to orbit the Sun.'}
+];
+const $=id=>document.getElementById(id);
+let current=models[0], scene, camera, renderer, root, controls, running=true, frame=0, dragging=false, lastX=0,lastY=0, rotX=0.15,rotY=0, zoom=1;
+const stage=$('stage');
+function buildList(filter='all'){
+ $('modelList').innerHTML='';
+ models.filter(m=>filter==='all'||m.subject===filter).forEach(m=>{
+  const b=document.createElement('button');b.className='model-btn';b.innerHTML=`<span>${m.emoji}</span><span>${m.title}<small>${m.subject[0].toUpperCase()+m.subject.slice(1)}</small></span>`;
+  b.addEventListener('click',()=>selectModel(m));$('modelList').appendChild(b);
+ });
+}
+function setInfo(m){
+ $('modelTitle').textContent=m.title;$('infoTitle').textContent=m.heading;$('infoText').textContent=m.text;$('factText').textContent=m.fact;
+ $('subjectTag').textContent=m.subject==='earth'?'Earth Science':m.subject[0].toUpperCase()+m.subject.slice(1);$('fallbackEmoji').textContent=m.emoji;
+}
+function selectModel(m){current=m;setInfo(m);if(window.THREE)drawModel(m);else $('fallback').style.display='flex';}
+document.querySelectorAll('.subject').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.subject').forEach(x=>x.classList.remove('active'));b.classList.add('active');buildList(b.dataset.subject);const first=models.find(m=>b.dataset.subject==='all'||m.subject===b.dataset.subject);if(first)selectModel(first)}));
+$('motionBtn').addEventListener('click',()=>{running=!running;$('motionBtn').textContent=running?'⏸ Pause rotation':'▶ Resume rotation';$('motionBtn').setAttribute('aria-pressed',String(running))});
+stage.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;lastY=e.clientY;stage.setPointerCapture(e.pointerId)});
+stage.addEventListener('pointermove',e=>{if(!dragging)return;rotY+=(e.clientX-lastX)*.01;rotX+=(e.clientY-lastY)*.01;lastX=e.clientX;lastY=e.clientY;if(root){root.rotation.x=rotX;root.rotation.y=rotY}});
+stage.addEventListener('pointerup',()=>dragging=false);stage.addEventListener('pointercancel',()=>dragging=false);
+stage.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.65,Math.min(1.8,zoom+(e.deltaY<0?.08:-.08)));if(camera)camera.position.z=8/zoom},{passive:false});
+buildList();
+async function init3D(){
+ try{
+  const THREE=await import('https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js');
+  window.THREE=THREE;
+  scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(45,stage.clientWidth/stage.clientHeight,.1,100);camera.position.z=8;
+  renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setSize(stage.clientWidth,stage.clientHeight);stage.prepend(renderer.domElement);
+  scene.add(new THREE.AmbientLight(0xffffff,2.1));const light=new THREE.PointLight(0xffffff,35);light.position.set(4,5,7);scene.add(light);
+  root=new THREE.Group();scene.add(root);
+  const resize=()=>{if(!renderer)return;camera.aspect=stage.clientWidth/stage.clientHeight;camera.updateProjectionMatrix();renderer.setSize(stage.clientWidth,stage.clientHeight)};new ResizeObserver(resize).observe(stage);
+  $('fallback').style.display='none';drawModel(current);
+  function animate(){requestAnimationFrame(animate);if(running&&!dragging&&root)root.rotation.y+=.003;renderer.render(scene,camera)}animate();
+ }catch(e){$('fallback').style.display='flex';$('fallback').querySelector('strong').textContent='3D viewer could not load';$('fallback').querySelector('p').textContent='Please check your internet connection or browser WebGL support.';}
+}
+function clearRoot(){while(root.children.length){const o=root.children.pop();root.remove(o);o.traverse?.(x=>{x.geometry?.dispose();if(x.material){if(Array.isArray(x.material))x.material.forEach(m=>m.dispose());else x.material.dispose()}})}}
+function drawModel(m){
+ if(!window.THREE||!root)return;const T=window.THREE;clearRoot();root.rotation.set(rotX,rotY,0);zoom=1;if(camera)camera.position.z=8;
+ const mat=(color,roughness=.5)=>new T.MeshStandardMaterial({color,roughness,metalness:.05});
+ const sphere=(x,y,z,r,color)=>{const o=new T.Mesh(new T.SphereGeometry(r,24,16),mat(color));o.position.set(x,y,z);root.add(o);return o};
+ const rod=(a,b,r,color)=>{const A=new T.Vector3(...a),B=new T.Vector3(...b),d=new T.Vector3().subVectors(B,A);const o=new T.Mesh(new T.CylinderGeometry(r,r,d.length(),12),mat(color));o.position.copy(A).add(B).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());root.add(o);return o};
+ const ring=(r,color,tilt=0)=>{const o=new T.Mesh(new T.TorusGeometry(r,.018,8,100),mat(color));o.rotation.x=Math.PI/2+tilt;root.add(o);return o};
+ if(m.id==='atom'){
+  sphere(0,0,0,.58,0xf2a65a);for(let i=0;i<5;i++)sphere(Math.cos(i*2.5)*.22,Math.sin(i*2.5)*.22,.18,.2,i%2?0x66b8ff:0xff6d8b);
+  for(let i=0;i<3;i++){const r=ring(1.45,0x79e6d2,i*.75);r.rotation.y=i*1.0;const e=sphere(1.45,0,0,.12,0x8ce8ff);e.position.set(Math.cos(i*2)*1.45,Math.sin(i*2)*.55,.45)}
+ }else if(m.id==='solar'){
+  sphere(0,0,0,.58,0xffc857);[.95,1.4,1.9,2.45].forEach((r,i)=>{ring(r,0x536c9b);sphere(r,0,0,[.13,.2,.16,.25][i],[0x8fc7ff,0xe8a46c,0xc56f59,0x87c5a6][i])});
+ }else if(m.id==='circuit'){
+  rod([-1.8,0,0],[1.8,0,0],.045,0x8ce8ff);rod([-1.8,0,0],[-1.8,1.1,0],.045,0x8ce8ff);rod([1.8,0,0],[1.8,1.1,0],.045,0x8ce8ff);rod([-1.8,1.1,0],[ -.5,1.1,0],.045,0x8ce8ff);rod([.5,1.1,0],[1.8,1.1,0],.045,0x8ce8ff);rod([-.35,.85,0],[.35,1.35,0],.06,0xffd166);rod([-.35,1.35,0],[.35,.85,0],.06,0xffd166);sphere(-1.8,0,0,.22,0x6bc2ff);sphere(1.8,0,0,.18,0xffe08a);
+ }else if(m.id==='cell'){
+  const outer=new T.Mesh(new T.SphereGeometry(1.65,32,24),new T.MeshStandardMaterial({color:0x64d6bd,transparent:true,opacity:.23,roughness:.4}));root.add(outer);
+  for(let i=0;i<14;i++){const a=i*2.4;sphere(Math.cos(a)*(.6+(i%3)*.18),Math.sin(a)*(.65+(i%4)*.12),Math.sin(i)*.35,.13,i%2?0x8ce8ff:0xffc857)}
+  sphere(0,0,0,.55,0x9c8bff);sphere(.15,.1,.38,.22,0xd8caff);
+ }else if(m.id==='dna'){
+  for(let i=0;i<34;i++){const t=i*.32,y=(i-16)*.09,x=Math.cos(t)*.85,z=Math.sin(t)*.85;const x2=Math.cos(t+Math.PI)*.85,z2=Math.sin(t+Math.PI)*.85;sphere(x,y,z,.09,0x70d6ff);sphere(x2,y,z2,.09,0xffa6c9);if(i%2===0)rod([x,y,z],[x2,y,z2],.035,0xe6eaff)}
+ }else if(m.id==='heart'){
+  sphere(-.32,.15,0,.65,0xe65f78);sphere(.32,.15,0,.65,0xe65f78);const lower=new T.Mesh(new T.ConeGeometry(.83,1.25,24),mat(0xe65f78));lower.position.set(0,-.55,0);lower.rotation.z=Math.PI;root.add(lower);rod([-.2,.6,0],[-.3,1.35,0],.13,0x6ab9ff);rod([.25,.6,0],[.45,1.35,0],.13,0xff7777);
+ }else if(m.id==='water'){
+  sphere(0,0,0,.48,0xff5b67);sphere(-.55,.48,0,.29,0x91d7ff);sphere(.55,.48,0,.29,0x91d7ff);rod([-.18,.32,0],[-.42,.45,0],.09,0xdce8ff);rod([.18,.32,0],[.42,.45,0],.09,0xdce8ff);
+ }else if(m.id==='molecule'){
+  const pts=[[-1,0,0],[-.35,.65,0],[.45,.55,0],[1.05,-.1,0],[.25,-.65,.15]];const cols=[0x91d7ff,0xffc857,0x91d7ff,0xff7c8e,0xffc857];pts.forEach((p,i)=>sphere(...p,.3,cols[i]));[[0,1],[1,2],[2,3],[2,4]].forEach(([a,b])=>rod(pts[a],pts[b],.08,0xdce8ff));
+ }else if(m.id==='earth'){
+  sphere(0,0,0,1.45,0x277fcb);for(let i=0;i<12;i++){const a=i*2.399;const r=.5+(i%4)*.22;sphere(Math.cos(a)*r,Math.sin(a)*r,Math.cos(i*1.3)*.95,.2+(i%3)*.07,0x5bc28b)}ring(1.75,0xdce8ff,.25);
+ }
+}
+init3D();
+</script>
+</body>
+</html>
