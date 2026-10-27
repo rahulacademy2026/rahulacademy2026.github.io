@@ -2,339 +2,265 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b5ed7">
 <title>Class 9 Maths Chapter 1 Solutions | Rahul Academy</title>
-
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    color: #172033;
-    line-height: 1.7;
-}
-
-header {
-    background: linear-gradient(135deg, #075985, #2563eb);
-    color: white;
-    text-align: center;
-    padding: 28px 15px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 27px;
-}
-
-header p {
-    margin-bottom: 0;
-}
-
-.container {
-    max-width: 850px;
-    margin: auto;
-    padding: 16px;
-}
-
-.question {
-    background: white;
-    padding: 18px;
-    margin: 16px 0;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #00000012;
-    border-left: 5px solid #2563eb;
-}
-
-.question h2 {
-    color: #075985;
-    font-size: 19px;
-    margin-top: 0;
-}
-
-.answer {
-    background: #ecfdf5;
-    border-radius: 8px;
-    padding: 12px;
-    margin-top: 12px;
-}
-
-.math {
-    background: #f8fafc;
-    padding: 10px;
-    border-radius: 6px;
-    overflow-wrap: anywhere;
-}
-
-button {
-    background: #075985;
-    color: white;
-    padding: 12px 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    margin: 5px 0;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #172033;
-    color: white;
-}
-
-a {
-    color: #2563eb;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 23px;
-    }
-
-    .question {
-        padding: 14px;
-    }
-}
+:root{--bg:#f3f7fc;--card:#fff;--text:#182338;--muted:#526176;--blue:#0759b8;--soft:#e8f2ff;--green:#e8fff2;--border:#d8e2ef}
+body.dark{--bg:#101827;--card:#182337;--text:#edf4ff;--muted:#bac8dc;--blue:#76b7ff;--soft:#203653;--green:#173a2b;--border:#34445b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(135deg,#063b78,#0b76d1);color:white;text-align:center;padding:30px 16px}
+header h1{margin:0;font-size:clamp(25px,5vw,36px)}header p{margin:6px 0}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--border);padding:10px;display:flex;gap:8px;overflow-x:auto}
+nav a{white-space:nowrap;color:var(--blue);font-weight:bold;text-decoration:none;padding:7px 10px;border-radius:8px;background:var(--soft)}
+main{max-width:950px;margin:auto;padding:16px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+button{border:0;border-radius:9px;padding:10px 14px;background:var(--blue);color:white;font-size:15px;cursor:pointer}
+input{width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);font-size:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin:16px 0;box-shadow:0 4px 14px #001a330a}
+.card h2{color:var(--blue);margin:0 0 10px;font-size:21px}.card h3{margin:14px 0 5px;font-size:17px}
+.concept{background:var(--soft);padding:12px;border-radius:9px}.answer{background:var(--green);padding:12px;border-radius:9px;margin-top:12px}.formula{font-family:Arial,sans-serif;background:var(--bg);border:1px dashed var(--border);padding:10px;border-radius:8px;overflow-wrap:anywhere}
+.tip{color:var(--muted);font-size:14px}.warning{border-left:4px solid #e6a23c;padding:10px 12px;background:var(--bg)}
+details{margin-top:10px}summary{cursor:pointer;color:var(--blue);font-weight:bold}
+footer{text-align:center;background:#10233d;color:white;padding:22px;margin-top:30px}
+.hidden{display:none!important}
+@media(max-width:600px){main{padding:10px}.card{padding:14px}nav{font-size:14px}}
 </style>
 </head>
-
 <body>
-
 <header>
-    <h1>🎓 Rahul Academy</h1>
-    <p>Class 9 Mathematics | Chapter 1</p>
-    <h2>Orienting Yourself: The Use of Coordinates</h2>
+<h1>🎓 Rahul Academy</h1>
+<p>Class 9 Mathematics • Ganita Manjari Part I</p>
+<h2>Chapter 1: Orienting Yourself — The Use of Coordinates</h2>
+<p>Concepts • Worked steps • Final answers • Exam tips</p>
 </header>
+<nav>
+<a href="#start">Start</a><a href="#ex11">Exercise 1.1</a><a href="#ex12">Exercise 1.2</a><a href="#end">End Exercises 1–16</a>
+</nav>
+<main id="start">
+<div class="toolbar">
+<button onclick="document.body.classList.toggle('dark')">🌙 Toggle dark mode</button>
+<button onclick="window.print()">🖨 Print / Save PDF</button>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆ Back to top</button>
+</div>
+<input id="search" placeholder="🔎 Search questions or topics..." oninput="filterQuestions()" aria-label="Search questions">
+<section class="card">
+<h2>How to use this page</h2>
+<p>Each worked question has a short concept, calculation steps, and a highlighted answer. Use the search box to find a question quickly.</p>
+<p class="tip">Note: Exercise Sets 1.1 and 1.2 refer to room-plan diagrams in the book. Exact coordinates and measurements cannot be responsibly filled in without clearly reading those diagrams, so diagram-dependent answers are marked below rather than guessed.</p>
+</section>
 
-<main class="container">
+<section id="ex11" class="card">
+<h2>Exercise Set 1.1 — Room plan and coordinates</h2>
+<div class="warning"><b>Diagram needed:</b> These questions refer to Fig. 1.3. The uploaded PDF text does not make every point and measurement in that figure clear enough to calculate exact answers. Check the figure in your book for the values.</div>
+<h3>(i) Door D₁R₁: distance from the left wall and x-axis</h3>
+<p><b>Method:</b> Read the coordinates of the door endpoints from Fig. 1.3. The horizontal distance from the y-axis is the x-coordinate; the vertical distance from the x-axis is the y-coordinate, using the figure's scale.</p>
+<h3>(ii) Coordinates of D₁</h3>
+<p><b>Method:</b> Locate D₁ on the coordinate grid and write its horizontal coordinate first, followed by its vertical coordinate: (x, y).</p>
+<h3>(iii) If R₁ = (11.5, 0), find the door width</h3>
+<p><b>Method:</b> Since R₁ lies on the x-axis, compare its x-coordinate with the x-coordinate of D₁. Door width is the horizontal distance between the endpoints if the door is horizontal. Then compare the result with the comfortable-width guidance discussed in the textbook.</p>
+<h3>(iv) Compare the bathroom door B₁B₂ with the room door</h3>
+<p><b>Method:</b> Given B₁ = (0, 1.5) and B₂ = (0, 4), bathroom-door width = |4 − 1.5| = 2.5 units (feet if the figure uses feet). Compare this with the room-door width calculated from Fig. 1.3.</p>
+<div class="answer"><b>Known result:</b> Bathroom door length from the stated endpoints is 2.5 units. Other exact answers depend on Fig. 1.3.</div>
+</section>
 
-    <p>
-        Welcome to Rahul Academy! Explore step-by-step solutions
-        to selected questions from Class 9 Mathematics Chapter 1.
-    </p>
+<section id="ex12" class="card">
+<h2>Exercise Set 1.2 — Room layout and coordinates</h2>
+<div class="warning"><b>Diagram needed:</b> These questions use Fig. 1.5. Use the actual figure to read room boundaries, doors, and furniture coordinates. The methods below show how to solve each part.</div>
+<h3>Q1. Table feet at (8, 9), (11, 9), and (11, 7)</h3>
+<p><b>(i) Fourth foot:</b> The points form three corners of a rectangle. The missing corner has x-coordinate 8 and y-coordinate 7.</p>
+<div class="answer"><b>Answer:</b> Fourth foot = (8, 7).</div>
+<p><b>(ii) Is this a good spot?</b> Check the table's location against the room boundaries, door swing, and walking space in Fig. 1.5. The exact judgement depends on the room plan.</p>
+<p><b>(iii) Dimensions:</b> Width = |11 − 8| = 3 units; length = |9 − 7| = 2 units. The height is not represented by a 2D floor-plan coordinate; use the table information given in the figure/text.</p>
+<h3>Q2. Will the bathroom door hit the wardrobe?</h3>
+<p><b>Method:</b> Draw the door's swing arc from its hinge point B₁. Compare the swept area with the wardrobe's footprint. If they overlap, possible changes include moving the wardrobe, changing the hinge side, or having the door open the other way, if the layout permits.</p>
+<h3>Q3. Bathroom and washroom fixtures</h3>
+<p><b>Method:</b> Read O, F, R and P from Fig. 1.5 and record each corner as (x, y). For shape SHWR, list each vertex in order from the diagram. To place a 3 ft × 2 ft washbasin or 2 ft × 3 ft toilet, add/subtract the appropriate length along the x- or y-direction from its chosen corner.</p>
+<h3>Q4. Dining room: length 18 ft and width 15 ft</h3>
+<p><b>Method:</b> Draw a rectangle 18 units long and 15 units wide using the scale in the diagram. Label its corners. A 5 ft × 3 ft table at the centre has its centre at the midpoint of the room; place its edges 2.5 ft either side along its length and 1.5 ft either side along its width.</p>
+<div class="answer"><b>Confirmed calculation:</b> For Q1, the fourth table foot is (8, 7), and the table footprint is 3 units by 2 units. Exact remaining coordinates require Fig. 1.5.</div>
+</section>
 
-    <button onclick="history.back()">⬅ Back</button>
-    <button onclick="window.print()">🖨 Print Solutions</button>
+<section id="end">
+<h2 style="color:var(--blue)">End-of-Chapter Exercises 1–16</h2>
 
-    <section class="question">
-        <h2>Question 1: Where do the coordinate axes intersect?</h2>
-        <p><b>Solution:</b> The x-axis and y-axis intersect at the origin.</p>
-        <div class="answer">
-            <b>Answer: (0, 0)</b>
-        </div>
-    </section>
+<article class="card q">
+<h2>Q1. Where do the coordinate axes intersect?</h2>
+<div class="concept"><b>Concept:</b> The x-axis and y-axis cross at the origin.</div>
+<p><b>Steps:</b> At the intersection, both the horizontal coordinate x and vertical coordinate y are zero.</p>
+<div class="answer"><b>Final answer:</b> Origin = (0, 0).</div>
+<p class="tip"><b>Exam tip:</b> Remember that the origin is the starting point for both axes.</p>
+</article>
 
-    <section class="question">
-        <h2>Question 2: A point W has x-coordinate −5.</h2>
-        <p>
-            A line passes through W parallel to the y-axis.
-            What can we say about a point H on this line?
-        </p>
-        <p><b>Solution:</b></p>
-        <div class="math">
-            If W = (−5, a), then H = (−5, b),
-            where a and b are y-coordinates.
-        </div>
-        <div class="answer">
-            <b>Answer:</b> H has x-coordinate −5.
-            It lies in Quadrant II or III if its y-coordinate
-            is non-zero. If its y-coordinate is zero, it lies
-            on the negative x-axis.
-        </div>
-    </section>
+<article class="card q">
+<h2>Q2. W has x-coordinate −5. What can we say about H on the line through W parallel to the y-axis?</h2>
+<div class="concept"><b>Concept:</b> A vertical line has the same x-coordinate at every point.</div>
+<p><b>Step 1:</b> Since W has x-coordinate −5, the line through W parallel to the y-axis is x = −5.</p>
+<p><b>Step 2:</b> Every point H on this line has the form H = (−5, y).</p>
+<div class="answer"><b>Final answer:</b> H's x-coordinate is −5. If y &gt; 0 it lies in Quadrant II; if y &lt; 0 it lies in Quadrant III; if y = 0 it lies on the negative x-axis.</div>
+</article>
 
-    <section class="question">
-        <h2>Question 3: Points R, A, M and P</h2>
-        <p>
-            R = (3, 0), A = (0, −2), M = (−5, −2),
-            P = (−5, 2). Join them in order.
-        </p>
+<article class="card q">
+<h2>Q3. R(3, 0), A(0, −2), M(−5, −2), P(−5, 2)</h2>
+<div class="concept"><b>Concept:</b> Horizontal segments are parallel to the x-axis; vertical segments are parallel to the y-axis.</div>
+<h3>(i) Perpendicular sides</h3><p>AM goes from (0, −2) to (−5, −2), so y stays fixed and AM is horizontal. MP goes from (−5, −2) to (−5, 2), so x stays fixed and MP is vertical.</p>
+<div class="answer"><b>Answer:</b> AM ⟂ MP.</div>
+<h3>(ii) Side parallel to an axis</h3><div class="answer"><b>Answer:</b> AM ∥ x-axis and MP ∥ y-axis.</div>
+<h3>(iii) Mirror-image points</h3><p>M and P have the same x-coordinate and opposite y-coordinates: −2 and 2.</p>
+<div class="answer"><b>Answer:</b> M(−5, −2) and P(−5, 2) are reflections across the x-axis.</div>
+</article>
 
-        <p><b>(i) Which sides are perpendicular?</b></p>
-        <div class="answer">
-            <b>Answer:</b> AM is perpendicular to MP because
-            AM is horizontal and MP is vertical.
-        </div>
+<article class="card q">
+<h2>Q4. Construct a right triangle using Z(5, −6)</h2>
+<div class="concept"><b>Concept:</b> Horizontal and vertical lines meet at a right angle.</div>
+<p><b>One valid construction:</b> Choose I = (5, 0) and N = (0, −6), with Z = (5, −6).</p>
+<p><b>Step 1:</b> IZ is vertical. Its length is |0 − (−6)| = 6 units.</p>
+<p><b>Step 2:</b> ZN is horizontal. Its length is |5 − 0| = 5 units.</p>
+<p><b>Step 3:</b> The two sides meet at Z at 90°. By Pythagoras, IN = √(6² + 5²) = √61 units.</p>
+<div class="answer"><b>Final answer:</b> One possible right triangle has perpendicular sides IZ = 6 units and ZN = 5 units, and hypotenuse IN = √61 units. Other valid constructions may give different lengths.</div>
+</article>
 
-        <p><b>(ii) Which side is parallel to an axis?</b></p>
-        <div class="answer">
-            <b>Answer:</b> AM is parallel to the x-axis.
-            MP is parallel to the y-axis.
-        </div>
+<article class="card q">
+<h2>Q5. What if the coordinate system had no negative numbers?</h2>
+<div class="concept"><b>Concept:</b> Negative coordinates are needed for points to the left of the y-axis or below the x-axis.</div>
+<p>Without negative numbers, points with negative x- or y-coordinates could not be represented.</p>
+<div class="answer"><b>Final answer:</b> No. We could not locate every point on the two-dimensional plane.</div>
+</article>
 
-        <p><b>(iii) Find two mirror-image points.</b></p>
-        <div class="answer">
-            <b>Answer:</b> M = (−5, −2) and P = (−5, 2)
-            are mirror images across the x-axis.
-        </div>
-    </section>
+<article class="card q">
+<h2>Q6. Are M(−3, −4), A(0, 0), and G(6, 8) collinear?</h2>
+<div class="concept"><b>Concept:</b> If slopes from the same point to two other points are equal, the three points lie on one straight line.</div>
+<p><b>Step 1 — slope AM:</b></p><div class="formula">m<sub>AM</sub> = (−4 − 0)/(−3 − 0) = 4/3</div>
+<p><b>Step 2 — slope AG:</b></p><div class="formula">m<sub>AG</sub> = (8 − 0)/(6 − 0) = 8/6 = 4/3</div>
+<p><b>Step 3:</b> The slopes are equal.</p>
+<div class="answer"><b>Final answer:</b> Yes, M, A and G are collinear.</div>
+<p class="tip"><b>Exam tip:</b> Show both slope calculations before writing the conclusion.</p>
+</article>
 
-    <section class="question">
-        <h2>Question 4: Construct a right triangle using Z(5, −6)</h2>
+<article class="card q">
+<h2>Q7. Are R(−5, −1), B(−2, −5), and C(4, −12) collinear?</h2>
+<div class="concept"><b>Concept:</b> Collinear points must have equal slopes between pairs of points.</div>
+<p><b>Step 1 — slope RB:</b></p><div class="formula">m<sub>RB</sub> = [−5 − (−1)]/[−2 − (−5)] = −4/3</div>
+<p><b>Step 2 — slope BC:</b></p><div class="formula">m<sub>BC</sub> = [−12 − (−5)]/[4 − (−2)] = −7/6</div>
+<p><b>Step 3:</b> Since −4/3 ≠ −7/6, the slopes are different.</p>
+<div class="answer"><b>Final answer:</b> No, R, B and C are not collinear.</div>
+</article>
 
-        <p><b>One possible construction:</b></p>
+<article class="card q">
+<h2>Q8(i). Make a right-angled isosceles triangle with the origin as one vertex.</h2>
+<p>Choose O = (0, 0), A = (3, 0), and B = (0, 3).</p>
+<p>OA = 3 units and OB = 3 units. OA is horizontal and OB is vertical, so OA ⟂ OB.</p>
+<div class="answer"><b>Final answer:</b> Triangle OAB is right-angled at O and is isosceles because OA = OB.</div>
+<h3>Q8(ii). Make an isosceles triangle with one vertex in Quadrant III and another in Quadrant IV.</h3>
+<p>Choose O = (0, 0), A = (−2, −2) in Quadrant III, and B = (2, −2) in Quadrant IV.</p>
+<div class="formula">OA = √[(-2)² + (-2)²] = √8<br>OB = √[(2)² + (-2)²] = √8</div>
+<div class="answer"><b>Final answer:</b> OA = OB, so triangle OAB is isosceles and meets the quadrant condition.</div>
+</article>
 
-        <div class="math">
-            Z = (5, −6)<br>
-            I = (5, 0)<br>
-            N = (0, −6)
-        </div>
+<article class="card q">
+<h2>Q9. Is M the midpoint of ST?</h2>
+<div class="concept"><b>Concept:</b> The midpoint of S(x₁,y₁) and T(x₂,y₂) is ((x₁+x₂)/2, (y₁+y₂)/2).</div>
+<h3>(i) S(−3, 0), M(0, 0), T(3, 0)</h3><div class="formula">Midpoint = ((−3+3)/2, (0+0)/2) = (0, 0)</div><div class="answer"><b>Answer:</b> Yes, M is the midpoint.</div>
+<h3>(ii) S(2, 3), M(3, 4), T(4, 5)</h3><div class="formula">Midpoint = ((2+4)/2, (3+5)/2) = (3, 4)</div><div class="answer"><b>Answer:</b> Yes, M is the midpoint.</div>
+<h3>(iii) S(0, 0), M(0, 5), T(0, −10)</h3><div class="formula">Midpoint = ((0+0)/2, (0−10)/2) = (0, −5)</div><div class="answer"><b>Answer:</b> No. The midpoint is (0, −5), not (0, 5).</div>
+<h3>(iv) S(−8, 7), M(0, −2), T(6, −3)</h3><div class="formula">Midpoint = ((−8+6)/2, (7−3)/2) = (−1, 2)</div><div class="answer"><b>Answer:</b> No. The midpoint is (−1, 2), not (0, −2).</div>
+</article>
 
-        <p>
-            IZ is vertical and ZN is horizontal.
-            Therefore, the angle at Z is 90°.
-        </p>
+<article class="card q">
+<h2>Q10. M(−7, 1) is the midpoint of A(3, −4) and B(x, y). Find B.</h2>
+<div class="concept"><b>Concept:</b> Apply the midpoint formula to both coordinates.</div>
+<p><b>Step 1 — x-coordinate:</b></p><div class="formula">(3 + x)/2 = −7<br>3 + x = −14<br>x = −17</div>
+<p><b>Step 2 — y-coordinate:</b></p><div class="formula">(−4 + y)/2 = 1<br>−4 + y = 2<br>y = 6</div>
+<div class="answer"><b>Final answer:</b> B = (−17, 6).</div>
+</article>
 
-        <div class="math">
-            IZ = 6 units<br>
-            ZN = 5 units<br>
-            IN = √(6² + 5²) = √61 units
-        </div>
+<article class="card q">
+<h2>Q11. Find the trisection points of A(4, 7) and B(16, −2).</h2>
+<div class="concept"><b>Concept:</b> Trisection points divide a segment into three equal parts.</div>
+<p><b>Step 1:</b> Change from A to B is (16−4, −2−7) = (12, −9).</p>
+<p><b>Step 2 — P, closer to A:</b> Add one-third of the change to A: (4,7) + (4,−3) = (8,4).</p>
+<p><b>Step 3 — Q, closer to B:</b> Add two-thirds of the change to A: (4,7) + (8,−6) = (12,1).</p>
+<div class="answer"><b>Final answer:</b> P = (8, 4), Q = (12, 1).</div>
+</article>
 
-        <div class="answer">
-            <b>Answer:</b> One valid right triangle has
-            perpendicular sides of 6 units and 5 units.
-            Other constructions may also be possible.
-        </div>
-    </section>
+<article class="card q">
+<h2>Q12. A(1, −8), B(−4, 7), C(−7, −4): circle centred at O(0, 0)</h2>
+<div class="concept"><b>Concept:</b> The distance from the origin to (x,y) is √(x²+y²).</div>
+<p><b>Step 1:</b> OA = √(1² + (−8)²) = √65.</p>
+<p><b>Step 2:</b> OB = √((−4)² + 7²) = √65.</p>
+<p><b>Step 3:</b> OC = √((−7)² + (−4)²) = √65.</p>
+<div class="answer"><b>Conclusion:</b> A, B and C lie on the same circle centred at O with radius √65 units.</div>
+<h3>Classify D(−5, 6)</h3><div class="formula">OD = √(25 + 36) = √61 &lt; √65</div><div class="answer"><b>Answer:</b> D is inside the circle.</div>
+<h3>Classify E(0, 9)</h3><div class="formula">OE = √(0² + 9²) = 9; and 9 &gt; √65</div><div class="answer"><b>Answer:</b> E is outside the circle.</div>
+</article>
 
-    <section class="question">
-        <h2>Question 5: What if negative numbers did not exist?</h2>
+<article class="card q">
+<h2>Q13. Triangle ABC has midpoints D(5, 1), E(6, 5), F(0, 3). Find A, B and C.</h2>
+<div class="concept"><b>Concept:</b> Assuming D, E and F are the midpoints of BC, CA and AB respectively, use the midpoint equations.</div>
+<p><b>Step 1:</b> Since D is midpoint of BC, E of CA, and F of AB:</p>
+<div class="formula">A = E + F − D<br>B = F + D − E<br>C = D + E − F</div>
+<p><b>Step 2 — Find A:</b></p><div class="formula">A = (6+0−5, 5+3−1) = (1, 7)</div>
+<p><b>Step 3 — Find B:</b></p><div class="formula">B = (0+5−6, 3+1−5) = (−1, −1)</div>
+<p><b>Step 4 — Find C:</b></p><div class="formula">C = (5+6−0, 1+5−3) = (11, 3)</div>
+<div class="answer"><b>Final answer:</b> A = (1, 7), B = (−1, −1), C = (11, 3). This uses the usual convention D midpoint of BC, E midpoint of CA, F midpoint of AB.</div>
+</article>
 
-        <p>
-            Without negative coordinates, we could represent
-            points with non-negative x- and y-coordinates,
-            but not every point on the coordinate plane.
-        </p>
+<article class="card q">
+<h2>Q14. City roads are 200 m apart; intersections are numbered (i, j).</h2>
+<div class="concept"><b>Concept:</b> An ordered pair identifies an intersection by its street numbers in the two directions.</div>
+<p>If the first number refers to one street direction and the second number to the perpendicular direction, (4,3) and (3,4) identify different intersections because the order is reversed.</p>
+<div class="answer"><b>Answer:</b> Under the usual ordered-pair convention, there are 2 distinct intersections: (4,3) and (3,4). Use the exact axis/numbering convention shown in the question's road diagram.</div>
+</article>
 
-        <div class="answer">
-            <b>Answer:</b> We would not be able to represent
-            points having negative coordinates.
-        </div>
-    </section>
+<article class="card q">
+<h2>Q15. A screen is 800 × 600. Circle A(100,150), radius 80; circle B(250,230), radius 100.</h2>
+<h3>(i) Does any part of either circle lie outside the screen?</h3>
+<p><b>Circle A:</b> x ranges from 100−80 = 20 to 100+80 = 180; y ranges from 150−80 = 70 to 150+80 = 230. All are within 0–800 horizontally and 0–600 vertically.</p>
+<p><b>Circle B:</b> x ranges from 250−100 = 150 to 350; y ranges from 230−100 = 130 to 330. These are also within the screen.</p>
+<div class="answer"><b>Answer:</b> No. Both circles lie entirely inside the screen.</div>
+<h3>(ii) Do the circles intersect?</h3>
+<p><b>Step 1:</b> Distance between centres = √((250−100)² + (230−150)²) = √(22500+6400) = √28900 = 170.</p>
+<p><b>Step 2:</b> Sum of radii = 80+100 = 180; difference = 100−80 = 20.</p>
+<p><b>Step 3:</b> Since 20 &lt; 170 &lt; 180, the circles intersect at two points.</p>
+<div class="answer"><b>Final answer:</b> Yes, the circles intersect at two points.</div>
+</article>
 
-    <section class="question">
-        <h2>Question 6: Are M, A and G collinear?</h2>
+<article class="card q">
+<h2>Q16. A(2, 1), B(−1, 2), C(−2, −1), D(1, −2): is ABCD a square?</h2>
+<div class="concept"><b>Concept:</b> A square has four equal sides and right angles. Equal diagonals also help verify it.</div>
+<p><b>Step 1 — Side lengths:</b></p>
+<div class="formula">AB² = (−1−2)² + (2−1)² = 9+1 = 10<br>BC² = (−2+1)² + (−1−2)² = 1+9 = 10<br>CD² = (1+2)² + (−2+1)² = 9+1 = 10<br>DA² = (2−1)² + (1+2)² = 1+9 = 10</div>
+<p>All four sides have length √10.</p>
+<p><b>Step 2 — Diagonals:</b></p>
+<div class="formula">AC² = (−2−2)² + (−1−1)² = 16+4 = 20<br>BD² = (1+1)² + (−2−2)² = 4+16 = 20</div>
+<p>Both diagonals have length √20. The diagonals are equal and the four sides are equal; adjacent side vectors also have dot product (−3)(−1) + (1)(−3) = 0, so adjacent sides are perpendicular.</p>
+<div class="answer"><b>Final answer:</b> Yes, ABCD is a square. Side length = √10 units, so area = (√10)² = 10 square units.</div>
+</article>
 
-        <p>
-            M = (−3, −4), A = (0, 0), G = (6, 8)
-        </p>
-
-        <p><b>Slope of AM:</b></p>
-
-        <div class="math">
-            (−4 − 0) / (−3 − 0) = 4/3
-        </div>
-
-        <p><b>Slope of AG:</b></p>
-
-        <div class="math">
-            (8 − 0) / (6 − 0) = 4/3
-        </div>
-
-        <div class="answer">
-            <b>Answer:</b> Both slopes are equal.
-            Therefore, M, A and G are collinear.
-        </div>
-    </section>
-
-    <section class="question">
-        <h2>Question 7: Are R, B and C collinear?</h2>
-
-        <p>
-            R = (−5, −1), B = (−2, −5), C = (4, −12)
-        </p>
-
-        <p><b>Slope of RB:</b></p>
-
-        <div class="math">
-            [−5 − (−1)] / [−2 − (−5)] = −4/3
-        </div>
-
-        <p><b>Slope of BC:</b></p>
-
-        <div class="math">
-            [−12 − (−5)] / [4 − (−2)] = −7/6
-        </div>
-
-        <div class="answer">
-            <b>Answer:</b> The slopes are unequal.
-            Therefore, the three points are not collinear.
-        </div>
-    </section>
-
-    <section class="question">
-        <h2>Question 8(i): Right-angled isosceles triangle</h2>
-
-        <p>Choose these three vertices:</p>
-
-        <div class="math">
-            O = (0, 0)<br>
-            A = (3, 0)<br>
-            B = (0, 3)
-        </div>
-
-        <p>
-            OA = 3 units and OB = 3 units.
-            OA and OB are perpendicular.
-        </p>
-
-        <div class="answer">
-            <b>Answer:</b> Triangle OAB is a right-angled
-            isosceles triangle.
-        </div>
-    </section>
-
-    <section class="question">
-        <h2>Question 8(ii): Isosceles triangle in Quadrants III and IV</h2>
-
-        <p>Choose:</p>
-
-        <div class="math">
-            O = (0, 0)<br>
-            A = (−2, −2) — Quadrant III<br>
-            B = (2, −2) — Quadrant IV
-        </div>
-
-        <p>
-            OA = √8 units and OB = √8 units.
-        </p>
-
-        <div class="answer">
-            <b>Answer:</b> Since OA = OB, triangle OAB
-            is isosceles.
-        </div>
-    </section>
-
-    <section class="question">
-        <h2>🚀 More Chapter Solutions Coming Soon</h2>
-        <p>
-            Additional exercise solutions, coordinate-plane
-            diagrams and interactive mathematics activities
-            can be added to this page.
-        </p>
-    </section>
-
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        ⬆ Back to Top
-    </button>
-
+<section class="card">
+<h2>Chapter recap</h2>
+<ul>
+<li>Coordinates are written in the order (x, y).</li>
+<li>The origin is (0, 0).</li>
+<li>A vertical line has constant x-coordinate; a horizontal line has constant y-coordinate.</li>
+<li>Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2).</li>
+<li>Distance from the origin to (x, y): √(x²+y²).</li>
+<li>Compare slopes to test collinearity.</li>
+</ul>
+<p class="tip">Before publishing for school use, compare diagram-dependent questions with the exact figures in your book. The page deliberately flags those items rather than inventing coordinates.</p>
+</section>
 </main>
-
 <footer>
-    <p>© 2026 Rahul Academy</p>
-    <p>Learn • Practise • Succeed</p>
+<p><b>© 2026 Rahul Academy</b></p>
+<p>Learn • Practise • Succeed</p>
 </footer>
-
+<script>
+function filterQuestions(){
+ const term=document.getElementById('search').value.toLowerCase();
+ document.querySelectorAll('.q').forEach(card=>{
+   card.classList.toggle('hidden',!card.innerText.toLowerCase().includes(term));
+ });
+}
+</script>
 </body>
-</html>
+    </html>
