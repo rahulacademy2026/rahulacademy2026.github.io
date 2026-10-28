@@ -23,300 +23,68 @@ footer{background:var(--navy);color:#dbeafe;text-align:center;padding:25px 16px;
 .hidden{display:none!important}
 @media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}header{justify-content:center}nav{justify-content:center}}
 @media(max-width:500px){.grid{grid-template-columns:1fr}.hero{border-radius:17px}nav a{font-size:.88rem;padding:6px 8px}main{padding:14px 12px}}
-  /* Rahul Academy opening animation */
-@keyframes welcomeFade {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-header {
-  animation: welcomeFade 1s ease-out;
-}
-
-.hero {
-  animation: welcomeFade 1.2s ease-out;
-}
-
-.card {
-  animation: welcomeFade 1s ease-out;
-  }
-  #welcome-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  background: linear-gradient(135deg, #102e55, #2563eb);
-  animation: welcomeExit 0.7s ease 2s forwards;
-}
-
-.welcome-content {
-  padding: 20px;
-  animation: welcomeEnter 0.8s ease both;
-}
-
-.welcome-logo {
-  font-size: 65px;
-}
-
-.welcome-content h1 {
-  font-size: clamp(28px, 6vw, 42px);
-  margin: 12px 0;
-}
-
-.welcome-content p {
-  font-size: 18px;
-  color: #dbeafe;
-}
-
-.welcome-loader {
-  width: 45px;
-  height: 45px;
-  border: 4px solid #ffffff55;
-  border-top-color: white;
-  border-radius: 50%;
-  margin: 25px auto 0;
-  animation: welcomeSpin 0.8s linear infinite;
-}
-
-@keyframes welcomeEnter {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes welcomeSpin {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes welcomeExit {
-  to {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  }
 </style>
 </head>
 <body>
-  <!-- Rahul Academy 3D Science Lab -->
-<section style="
-  text-align:center;
-  padding:30px 15px;
-  margin:20px 10px;
-  background:linear-gradient(135deg,#101a35,#176b87);
-  border-radius:20px;
-  color:white;
-">
-  <h2>🔬 Explore Our 3D Science Lab</h2>
-
-  <p>
-    Discover Physics, Biology, Chemistry and Earth Science
-    through interactive 3D models!
-  </p>
-
-  <a href="science-lab.html"
-     style="
-       display:inline-block;
-       background:#72e0c1;
-       color:#102039;
-       padding:14px 22px;
-       border-radius:12px;
-       text-decoration:none;
-       font-weight:bold;
-       margin-top:10px;
-     ">
-    🚀 Open 3D Science Lab
-  </a>
-</section>
-  <div id="welcome-screen">
-  <div class="welcome-content">
-    <div class="welcome-logo">📘</div>
-    <h1>Welcome to Rahul Academy</h1>
-    <p>Learn. Grow. Succeed.</p>
-    <div class="welcome-loader"></div>
-  </div>
-  </div>
 <header>
   <div class="logo">📘 Rahul <span>Academy</span></div>
   <nav aria-label="Main navigation">
     <a href="#home">Home</a><a href="#classes">Subjects</a><a href="#study">Study Notes</a><a href="#quiz">Quiz</a><a href="#about">About</a>
-    <a href="#developer">About Developer</a>
   </nav>
 </header>
 <main>
   <section class="hero" id="home">
-    <div>
-      <div class="eyebrow">Your learning partner</div>
-      <h1>Learn. Grow.<br>Succeed.</h1>
-      <p>Understand concepts, revise important topics, and practise what you learn. Welcome to your Class 9 learning dashboard.</p>
-      <a class="btn light" href="#classes">Explore subjects →</a>
-      <a class="btn light" href="#quiz">Try a quiz</a>
+    <div><div class="eyebrow">Class 9 · Updated book contents</div><h1>Learn. Grow.<br>Succeed.</h1>
+      <p>Welcome to Rahul Academy! Maths mein chapter-wise detailed solutions aur baaki subjects mein chapter-wise short notes.</p>
+      <a class="btn light" href="#classes">Explore subjects →</a><a class="btn light" href="#math-chapters">Maths solutions</a>
     </div>
-    <div class="hero-card">
-      <strong>🎯 Your study goals</strong>
-      <ul><li>Learn a topic every day</li><li>Make short revision notes</li><li>Practise questions regularly</li><li>Check your progress with quizzes</li></ul>
-    </div>
+    <div class="hero-card"><strong>🎯 Rahul Academy study plan</strong><ul><li>Maths: detailed, step-by-step solutions</li><li>Science: short chapter notes</li><li>Social Science: short chapter notes</li><li>English, Hindi & Sanskrit: short notes</li></ul></div>
   </section>
-
-  <section aria-labelledby="dash-title">
-    <h2 class="section-title" id="dash-title">Your learning dashboard</h2>
-    <p class="muted">Everything you need to begin learning in one place.</p>
-    <div class="grid">
-      <div class="card"><div class="icon">📚</div><h3>5 core subjects</h3><p>Maths, Science, English, Social Science and Hindi.</p></div>
-      <div class="card"><div class="icon">✍️</div><h3>Study and revise</h3><p>Use chapter guides and write your own notes.</p></div>
-      <div class="card"><div class="icon">🎯</div><h3>Practise quizzes</h3><p>Answer questions and get your score instantly.</p></div>
-    </div>
+  <section aria-labelledby="dash-title"><h2 class="section-title" id="dash-title">Your learning dashboard</h2><p class="muted">Class 9 content organised according to the contents pages you shared.</p>
+    <div class="grid"><div class="card"><div class="icon">➗</div><h3>Maths solutions</h3><p>Detailed solutions are the main focus for Mathematics.</p></div><div class="card"><div class="icon">📚</div><h3>Short notes</h3><p>Quick chapter-wise revision for all other subjects.</p></div><div class="card"><div class="icon">📱</div><h3>Mobile-friendly</h3><p>Study easily from your phone.</p></div></div>
   </section>
-
-  <section id="classes">
-    <h2 class="section-title">Class 9 subjects</h2>
-    <p class="muted">Choose a subject to view its starter topic guide.</p>
-    <div class="toolbar"><input id="subjectSearch" type="search" placeholder="Search subjects..." aria-label="Search subjects"><select id="subjectFilter" aria-label="Filter subjects"><option value="all">All subjects</option><option>Core</option><option>Language</option></select></div>
+  <section id="classes"><h2 class="section-title">Class 9 subjects</h2><p class="muted">Search for a subject, then open its syllabus and notes.</p>
+    <div class="toolbar"><input id="subjectSearch" type="search" placeholder="Search subjects or chapters..." aria-label="Search subjects or chapters"><select id="subjectFilter" aria-label="Filter subjects"><option value="all">All subjects</option><option value="math">Maths solutions</option><option value="notes">Short notes</option></select></div>
     <div class="grid" id="subjectGrid">
-      <article class="card subject-card" data-name="mathematics maths" data-type="Core"><div class="icon">➗</div><span class="tag">Core</span><h3>Mathematics</h3><p>Number systems, algebra, coordinate geometry, geometry, mensuration and statistics.</p><a class="btn" href="#study" data-topic="math"><div class="chapter-buttons">
-  <a href="math-chapter-1.html">
-    📘 Chapter 1 — View Solutions
-  </a>
-
-  <a href="chapter2.html">
-    📗 Chapter 2 — View Solutions
-  </a>
-
-  <a href="#study" data-topic="math">
-    View Study Guide
-  </a>
-      </div></a></article>
-      <article class="card subject-card" data-name="science physics chemistry biology" data-type="Core"><div class="icon">🔬</div><span class="tag">Core</span><h3>Science</h3><p>Explore matter, living organisms, motion, force, energy and the environment.</p><a class="btn" href="#study" data-topic="science">View study guide</a></article>
-      <article class="card subject-card" data-name="social science history geography civics economics" data-type="Core"><div class="icon">🌍</div><span class="tag">Core</span><h3>Social Science</h3><p>History, geography, democratic politics and economics topic guides.</p><a class="btn" href="#study" data-topic="social">View study guide</a></article>
-      <article class="card subject-card" data-name="english literature grammar writing" data-type="Language"><div class="icon">📖</div><span class="tag">Language</span><h3>English</h3><p>Reading comprehension, grammar, writing skills and literature revision.</p><a class="btn" href="#study" data-topic="english">View study guide</a></article>
-      <article class="card subject-card" data-name="hindi व्याकरण साहित्य" data-type="Language"><div class="icon">🖋️</div><span class="tag">Language</span><h3>Hindi</h3><p>Reading, writing, grammar and literature practice.</p><a class="btn" href="#study" data-topic="hindi">View study guide</a></article>
-      <article class="card subject-card" data-name="revision practice exam" data-type="Core"><div class="icon">🧠</div><span class="tag">Practice</span><h3>Revision corner</h3><p>Review definitions, formulas, key terms and mistakes from practice.</p><a class="btn" href="#quiz">Start a quiz</a></article>
+      <article class="card subject-card" data-name="mathematics maths coordinates linear polynomials numbers algebraic identities probability perimeter area sequences" data-type="math"><div class="icon">➗</div><span class="tag">Detailed solutions</span><h3>Mathematics</h3><p>8 chapters from your shared contents page. Detailed solutions are the priority.</p><a class="btn" href="#math-chapters">Open Maths syllabus</a></article>
+      <article class="card subject-card" data-name="science exploration cell tissues motion mixtures forces energy atom matter sound reproduction diversity earth system" data-type="notes"><div class="icon">🔬</div><span class="tag">Short notes</span><h3>Science</h3><p>13 chapters from the contents page you shared.</p><a class="btn" href="#notes-science">Open Science syllabus</a></article>
+      <article class="card subject-card" data-name="social science geography history political science economics oceans life earth surface atmosphere climate humans civilisation democracy elections choice market governance public policy finance startups" data-type="notes"><div class="icon">🌍</div><span class="tag">Short notes</span><h3>Social Science</h3><p>Part 1: 9 chapters · Part 2: 6 chapters.</p><a class="btn" href="#notes-social">Open Social Science syllabus</a></article>
+      <article class="card subject-card" data-name="english how i taught my grandmother pot maker winds change vitamin m world limitless possibilities twin melodies carrier words follow dream" data-type="notes"><div class="icon">📖</div><span class="tag">Short notes</span><h3>English</h3><p>Lessons and paired poems/texts as shown in your contents page.</p><a class="btn" href="#notes-english">Open English syllabus</a></article>
+      <article class="card subject-card" data-name="hindi do bailon ki katha kya likhun samvadheen aisi bhi baatein hoti hain aakhiri chattan tak reedh ki haddi main aur mera desh pad ram lakshman parshuram samvad bharati jhansi ki rani ghar ki yaad" data-type="notes"><div class="icon">🖋️</div><span class="tag">Short notes</span><h3>Hindi</h3><p>गद्य खंड के 7 पाठ और काव्य खंड के 5 पाठ.</p><a class="btn" href="#notes-hindi">Open Hindi syllabus</a></article>
+      <article class="card subject-card" data-name="sanskrit satyam shivam sundaram sanskritam dharma artha pandita vidya upaya ananda dharma gamo arihantanam varna uchcharan sandhi samasa vachyam shabdarupani dhaturupani" data-type="notes"><div class="icon">🕉️</div><span class="tag">Short notes</span><h3>Sanskrit</h3><p>11 पाठ और 5 परिशिष्ट, as shown in your contents photo.</p><a class="btn" href="#notes-sanskrit">Open Sanskrit syllabus</a></article>
     </div>
   </section>
-
-  <section id="study">
-    <h2 class="section-title">Study notes and chapter guides</h2>
-    <p class="muted">Starter summaries to help you revise. Open a subject below.</p>
-    <div class="notice"><strong>Curriculum note:</strong> These are starter topic guides, not a verified complete 2026 syllabus. Confirm your exact chapter list with the latest CBSE school curriculum and your teacher before exam preparation.</div>
-    <details open id="notes-math"><summary>➗ Mathematics — starter guide</summary><p><strong>Number systems:</strong> Learn rational and irrational numbers and how to represent real numbers on a number line.</p><p><strong>Algebra:</strong> Practise polynomials, identities and factorisation. Show each step clearly and check your answer.</p><p><strong>Geometry:</strong> Draw labelled figures, state the theorem you use, and give reasons for each step of a proof.</p><p><strong>Revision tip:</strong> Keep a formula notebook and solve a few problems without looking at worked examples.</p></details>
-    <details id="notes-science"><summary>🔬 Science — starter guide</summary><p><strong>Matter:</strong> Compare solids, liquids and gases by particle spacing, motion and attraction. Review changes of state.</p><p><strong>Motion:</strong> Speed = distance ÷ time. For uniform motion, understand distance-time graphs and units.</p><p><strong>Living organisms:</strong> Review cell structures and the functions of the cell membrane, cytoplasm and nucleus.</p><p><strong>Revision tip:</strong> Practise labelled diagrams and learn definitions in your own words.</p></details>
-    <details id="notes-social"><summary>🌍 Social Science — starter guide</summary><p><strong>History:</strong> Build a timeline and connect events with causes and consequences.</p><p><strong>Geography:</strong> Practise maps, location, climate and how physical features affect people.</p><p><strong>Democratic politics:</strong> Learn key terms, institutions, rights and responsibilities with examples.</p><p><strong>Economics:</strong> Understand basic economic terms and use real-life examples to explain them.</p></details>
-    <details id="notes-english"><summary>📖 English — starter guide</summary><p><strong>Reading:</strong> Read the question first, locate evidence in the passage and answer in your own words.</p><p><strong>Grammar:</strong> Practise tenses, subject-verb agreement, reported speech and sentence editing as assigned by your school.</p><p><strong>Writing:</strong> Plan the format, audience and main points before writing. Check spelling and punctuation.</p></details>
-    <details id="notes-hindi"><summary>🖋️ Hindi — starter guide</summary><p>Revise पाठ का सार, लेखक/कवि का परिचय where required, शब्दार्थ and प्रश्न-उत्तर. Practise व्याकरण and लेखन according to your school's prescribed textbook and syllabus.</p><p><strong>Revision tip:</strong> Write answers in clear sentences and check मात्रा, वर्तनी and punctuation.</p></details>
-    <p class="small">You can expand these guides by editing this HTML file and adding your teacher-approved chapter notes.</p>
-  </section>
-
-  <section id="quiz">
-    <h2 class="section-title">Practice quiz</h2>
-    <p class="muted">Answer these sample questions, then tap “Check my score”. Your score appears on this page.</p>
-    <div class="quiz-box">
-      <form id="quizForm">
-        <div class="question"><p>1. Which of these is a rational number?</p><label><input type="radio" name="q1" value="a"> √2</label><label><input type="radio" name="q1" value="b"> 3/4</label><label><input type="radio" name="q1" value="c"> π</label></div>
-        <div class="question"><p>2. What is the SI unit of speed?</p><label><input type="radio" name="q2" value="a"> metre</label><label><input type="radio" name="q2" value="b"> second</label><label><input type="radio" name="q2" value="c"> metre per second</label></div>
-        <div class="question"><p>3. Which cell structure contains genetic material and helps control cell activities?</p><label><input type="radio" name="q3" value="a"> Nucleus</label><label><input type="radio" name="q3" value="b"> Cell wall</label><label><input type="radio" name="q3" value="c"> Vacuole</label></div>
-        <div class="question"><p>4. Which is commonly used to show places and physical features of Earth?</p><label><input type="radio" name="q4" value="a"> A map</label><label><input type="radio" name="q4" value="b"> A poem</label><label><input type="radio" name="q4" value="c"> A dialogue</label></div>
-        <div class="question"><p>5. Which sentence is correctly punctuated?</p><label><input type="radio" name="q5" value="a"> where are you going.</label><label><input type="radio" name="q5" value="b"> Where are you going?</label><label><input type="radio" name="q5" value="c"> Where are you going,</label></div>
-        <button class="btn" type="submit">Check my score</button>
-        <button class="btn outline" type="reset" id="resetQuiz">Try again</button>
-      </form>
-      <div id="quizResult" class="result" role="status" aria-live="polite"></div>
-      <p class="small">This is a short sample quiz, not an official exam paper.</p>
+  <section id="math-chapters"><h2 class="section-title">➗ Mathematics — chapter-wise solutions</h2><p class="muted">Chapter names are transcribed from your Maths contents photo. Existing solution pages are linked for Chapters 1 and 2.</p>
+    <div class="notice"><strong>Important:</strong> Chapters 1 and 2 buttons open the solution files already in your repository. The remaining chapters are listed here; their detailed solution pages can be added next.</div>
+    <div class="grid">
+      <article class="card"><span class="tag">Chapter 1</span><h3>Orienting Yourself: The Use of Coordinates</h3><p>Detailed solution page</p><a class="btn" href="math-chapter-1.html">Open Chapter 1 solutions</a></article>
+      <article class="card"><span class="tag">Chapter 2</span><h3>Introduction to Linear Polynomials</h3><p>Detailed solution page</p><a class="btn" href="chapter2.html">Open Chapter 2 solutions</a></article>
+      <article class="card"><span class="tag">Chapter 3</span><h3>The World of Numbers</h3><p>Solutions page to be added.</p></article>
+      <article class="card"><span class="tag">Chapter 4</span><h3>Exploring Algebraic Identities</h3><p>Solutions page to be added.</p></article>
+      <article class="card"><span class="tag">Chapter 5</span><h3>I'm Up and Down, and Round and Round</h3><p>Solutions page to be added.</p></article>
+      <article class="card"><span class="tag">Chapter 6</span><h3>Measuring Space: Perimeter and Area</h3><p>Solutions page to be added.</p></article>
+      <article class="card"><span class="tag">Chapter 7</span><h3>The Mathematics of Maybe: Introduction to Probability</h3><p>Solutions page to be added.</p></article>
+      <article class="card"><span class="tag">Chapter 8</span><h3>Predicting What Comes Next: Exploring Sequences and Progressions</h3><p>Solutions page to be added.</p></article>
     </div>
   </section>
-
-  <section id="about">
-    <h2 class="section-title">About Rahul Academy</h2>
-    <div class="card"><p>Rahul Academy is a student learning project designed to organise study guides, revision ideas and practice quizzes in one easy-to-use place.</p><p><strong>Study smart:</strong> follow your school's syllabus, practise regularly, ask questions and revise your mistakes.</p></div>
+  <section id="study"><h2 class="section-title">Other subjects — short notes</h2><p class="muted">Chapter titles below follow the contents photos you sent. These are syllabus lists, not full notes yet.</p>
+    <details id="notes-science"><summary>🔬 Science — 13 chapters</summary><ol><li>Exploration: Entering the World of Secondary Science</li><li>Cell: The Building Block of Life</li><li>Tissues in Action</li><li>Describing Motion Around Us</li><li>Exploring Mixtures and their Separation</li><li>How Forces Affect Motion</li><li>Work, Energy, and Simple Machines</li><li>Journey Inside the Atom</li><li>Atomic Foundation of Matter</li><li>Sound Waves: Characteristics and Applications</li><li>Reproduction: How Life Continues</li><li>Patterns in Life: Diversity and Classification</li><li>Earth as a System: Energy, Matter, and Life</li></ol><p><strong>Note:</strong> Abhi tumne Science ka ek contents page bheja hai; is list mein wahi 13 chapters rakhe gaye hain.</p></details>
+    <details id="notes-social"><summary>🌍 Social Science — Part 1 and Part 2</summary><h3>Part 1 — 9 chapters</h3><ol><li>Understanding Social Science</li><li>Shaping of the Earth's Surface</li><li>Atmosphere and Climate</li><li>Early Humans and Beginning of Civilisation</li><li>State and Society up to 1000 CE</li><li>Democracy</li><li>Elections</li><li>Building Blocks in Economics: The Problem of Choice</li><li>The Price Puzzle: What Drives the Market</li></ol><h3>Part 2 — 6 chapters</h3><ol><li>Oceans and Life</li><li>Life on Earth</li><li>Resistance and Resilience (1000–1700 CE)</li><li>Governance and Public Policy</li><li>Managing Your Personal Finances</li><li>From Ideas to Startups</li></ol></details>
+    <details id="notes-english"><summary>📖 English — lessons and paired texts</summary><ol><li>How I Taught My Grandmother to Read; Bharat Our Land</li><li>The Pot Maker; Gifts of Grace: Honouring Our Vocations</li><li>Winds of Change; Canvas of Soil</li><li>Vitamin-M; I Cannot Remember My Mother</li><li>The World of Limitless Possibilities; Nine Gold Medals</li><li>Twin Melodies; A Friend Found in Music</li><li>Carrier of Words; Words</li><li>Follow That Dream; Believe in Yourself</li></ol><p>These titles are copied from the contents photo you sent.</p></details>
+    <details id="notes-hindi"><summary>🖋️ Hindi — पाठ्यक्रम</summary><h3>गद्य खंड</h3><ol><li>दो बैलों की कथा</li><li>क्या लिखूँ?</li><li>संवादहीन</li><li>ऐसी भी बातें होती हैं (लता मंगेशकर से साक्षात्कार)</li><li>आखिरी चट्टान तक</li><li>रीढ़ की हड्डी</li><li>मैं और मेरा देश</li></ol><h3>काव्य खंड</h3><ol start="8"><li>पद</li><li>राम-लक्ष्मण-परशुराम संवाद</li><li>भारति, जय, विजय करे!</li><li>झाँसी की रानी</li><li>घर की याद</li></ol></details>
+    <details id="notes-sanskrit"><summary>🕉️ Sanskrit — पाठ्यक्रम</summary><ol><li>सत्यं शिवं सुन्दरं संस्कृतम्</li><li>सुभाषितस्य मूलं धर्मः धर्मस्य मूलम् अर्थः</li><li>आत्मवत् सर्वभूतेषु यः पश्यति सः पण्डितः</li><li>न खलु वयस्तेजसो हेतुः</li><li>एषा सा कुटिलबुद्धिः मानवबुद्धेः सहकरी</li><li>मनःपूतं समाचरेत्</li><li>उपायं चिन्तयेत् प्राज्ञस्तथापायं च चिन्तयेत्</li><li>अन्नाद् आनन्दं प्रति</li><li>कृतं प्रतिकृतं कुर्याद् हिंसने धर्मः सनातनः</li><li>गमो अरिहंताणं</li><li>वर्णोच्चारण-शिक्षा २</li></ol><h3>परिशिष्ट</h3><ol><li>अन्वयः</li><li>समासः</li><li>वाच्यम्</li><li>शब्दरूपाणि</li><li>धातुरूपाणि</li></ol></details>
   </section>
-  <section id="developer">
-  <h2 class="section-title">👨‍💻 About the Developer</h2>
-
-  <div class="card">
-    <h3>Rahul Sharma</h3>
-
-    <p>Hello! Welcome to Rahul Academy.</p>
-
-    <p>
-      I created this website to help students
-      learn, revise, and practise their studies.
-    </p>
-
-    <h3>🎯 My Mission</h3>
-
-    <p>
-      My mission is to make learning simple,
-      interesting, and accessible for students.
-    </p>
-
-    <p><strong>Learn. Grow. Succeed. 🎓</strong></p>
-  </div>
-  </section>
+  <section id="about"><h2 class="section-title">About Rahul Academy</h2><div class="card"><p>Rahul Academy is a student learning project. Maths detailed solutions are the priority; other subjects are organised for short-note revision.</p><p><strong>Study smart:</strong> use your prescribed textbook and teacher's instructions. If a title looks misspelled, tell us and we can correct it.</p></div></section>
 </main>
 <footer><strong>📘 Rahul Academy</strong><br>Learn. Grow. Succeed.<br><span class="small" style="color:#dbeafe">Student learning project · Check official curriculum updates with your school.</span></footer>
 <script>
 (function(){
-  const search=document.getElementById('subjectSearch');
-  const filter=document.getElementById('subjectFilter');
-  const cards=[...document.querySelectorAll('.subject-card')];
-  function filterSubjects(){
-    const q=search.value.trim().toLowerCase();
-    const type=filter.value;
-    cards.forEach(card=>{
-      const matchesText=(card.dataset.name+' '+card.innerText).toLowerCase().includes(q);
-      const matchesType=type==='all'||card.dataset.type===type;
-      card.classList.toggle('hidden',!(matchesText&&matchesType));
-    });
-  }
-  search.addEventListener('input',filterSubjects);
-  filter.addEventListener('change',filterSubjects);
-
-  document.querySelectorAll('[data-topic]').forEach(link=>{
-    link.addEventListener('click',()=>{
-      const target=document.getElementById('notes-'+link.dataset.topic);
-      if(target) target.open=true;
-    });
-  });
-
-  const answers={q1:'b',q2:'c',q3:'a',q4:'a',q5:'b'};
-  const form=document.getElementById('quizForm');
-  const result=document.getElementById('quizResult');
-  form.addEventListener('submit',event=>{
-    event.preventDefault();
-    let score=0,answered=0;
-    Object.keys(answers).forEach(name=>{
-      const chosen=form.querySelector('input[name="'+name+'"]:checked');
-      if(chosen){answered++;if(chosen.value===answers[name])score++;}
-    });
-    if(answered<Object.keys(answers).length){
-      result.textContent='You answered '+answered+' of 5 questions. Please answer every question before checking your score.';
-      return;
-    }
-    result.textContent='Your score: '+score+'/5 ('+Math.round(score/5*100)+'%). '+(score===5?'Excellent work!':score>=3?'Good effort! Review the topics you missed.':'Keep practising—you can improve with revision.');
-  });
-  form.addEventListener('reset',()=>{result.textContent='';});
+ const search=document.getElementById('subjectSearch'), filter=document.getElementById('subjectFilter');
+ const cards=[...document.querySelectorAll('.subject-card')];
+ function filterSubjects(){const q=search.value.trim().toLowerCase(), type=filter.value;cards.forEach(card=>{const text=(card.dataset.name+' '+card.innerText).toLowerCase();card.classList.toggle('hidden',!(text.includes(q)&&(type==='all'||card.dataset.type===type)));});}
+ search.addEventListener('input',filterSubjects);filter.addEventListener('change',filterSubjects);
+ document.querySelectorAll('a[href^="#notes-"]').forEach(link=>link.addEventListener('click',()=>{const d=document.querySelector(link.getAttribute('href'));if(d)d.open=true;}));
 })();
 </script>
-  <div style="text-align:center; margin:20px;">
-  <a href="chapter1.html"
-     style="display:inline-block;
-     background:#1565c0;
-     color:white;
-     padding:14px 22px;
-     border-radius:10px;
-     text-decoration:none;
-     font-size:18px;
-     font-weight:bold;">
-    📘 Class 9 Maths — Chapter 1 Solutions
-  </a>
-  </div>
 </body>
-                                                                                                                                          </html>
+  </html>
